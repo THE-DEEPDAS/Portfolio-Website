@@ -1,4 +1,4 @@
-.technical-page {
+.CoCurricular-page {
     max-height: 100vh;
     overflow-y: auto;
     padding: 20px;
@@ -9,7 +9,7 @@
 }
 
 
-.technical-gallery {
+.CoCurricular-gallery {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -23,7 +23,7 @@ h1 {
 }
 
 @media screen and (max-width: 768px) {
-    .technical-page {
+    .CoCurricular-page {
         margin-left: 0;
         width: 100%;
     }

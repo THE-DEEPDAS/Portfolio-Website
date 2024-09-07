@@ -3,19 +3,39 @@ import './ImageCard.css';
 
 const ImageCard = ({ image, title, description }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     const openImage = () => {
         setIsOpen(true);
+        setCurrentImageIndex(0); // Reset to first image on open
     };
 
     const closeImage = () => {
         setIsOpen(false);
     };
 
+    const nextImage = () => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % image.length);
+    };
+
+    const prevImage = () => {
+        setCurrentImageIndex((prevIndex) => (prevIndex - 1 + image.length) % image.length);
+    };
+
+    const isMultipleImages = Array.isArray(image);
+
     return (
         <>
             <div className="image-card" onClick={openImage}>
-                <img src={image} alt={title} className="image-card-img" />
+                {isMultipleImages ? (
+                    <div className="image-gallery">
+                        {image.map((img, index) => (
+                            <img key={index} src={img} alt={title} className="image-card-img" />
+                        ))}
+                    </div>
+                ) : (
+                    <img src={image} alt={title} className="image-card-img" />
+                )}
                 <div className="image-card-title">{title}</div>
             </div>
 
@@ -23,7 +43,19 @@ const ImageCard = ({ image, title, description }) => {
                 <div className="image-overlay">
                     <div className="image-enlarged">
                         <button className="close-button" onClick={closeImage}>X</button>
-                        <img src={image} alt={title} className="enlarged-img" />
+                        {isMultipleImages ? (
+                            <>
+                                <button className="prev-button" onClick={prevImage}>Previous</button>
+                                <img
+                                    src={image[currentImageIndex]}
+                                    alt={title}
+                                    className="enlarged-img"
+                                />
+                                <button className="next-button" onClick={nextImage}>Next</button>
+                            </>
+                        ) : (
+                            <img src={image} alt={title} className="enlarged-img" />
+                        )}
                         <div className="image-description">
                             <h3>{title}</h3>
                             <p>{description}</p>
