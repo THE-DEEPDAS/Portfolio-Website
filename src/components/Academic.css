@@ -1,0 +1,30 @@
+.academic-page {
+    max-height: 100vh; 
+    overflow-y: auto; 
+    padding: 20px; 
+    background: linear-gradient(to right, #ff512f, #dd2476); 
+    margin-left: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.academic-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+p{
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}

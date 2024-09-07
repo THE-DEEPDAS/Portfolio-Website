@@ -1,6 +1,7 @@
 .sidebar {
     width: 250px;
-    height: 100vh;
+    min-height: 100vh; 
+    max-height: 100vh;
     background: linear-gradient(to bottom, #1a1a1d, #262626); 
     padding: 20px;
     color: #f0f0f0; 
@@ -9,6 +10,10 @@
     align-items: center;
     box-shadow: 2px 0 15px rgba(0, 0, 0, 0.5); 
     font-family: 'Roboto', sans-serif; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    overflow-y: auto; 
 }
 
 .profile {

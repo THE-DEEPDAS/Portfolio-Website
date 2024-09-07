@@ -1,0 +1,81 @@
+.image-card {
+    position: relative;
+    width: 250px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.image-card:hover {
+    transform: scale(1.1);
+}
+
+.image-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.image-card-title {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.image-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.image-enlarged {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff5f5f;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+}
+
+.enlarged-img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    border-radius: 10px;
+}
+
+.image-description {
+    margin-top: 20px;
+    color: #333;
+}
+
+.image-description h3 {
+    margin-bottom: 10px;
+}
+
+.image-description p {
+    font-size: 1em;
+}

@@ -1,6 +1,7 @@
 .main-content {
     flex-grow: 1;
     background: linear-gradient(to right, #ff512f, #dd2476); 
+    margin-left: 260px;
     padding: 40px;
     color: white;
     display: flex;

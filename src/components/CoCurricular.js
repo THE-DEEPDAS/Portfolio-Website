@@ -1,6 +1,6 @@
 import React from 'react';
 
-const About = () => {
+const CoCurricular = () => {
     return (
         <div className="page-content">
             <h1>About Page</h1>
@@ -9,4 +9,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default CoCurricular;

@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
 import About from './components/About';
+import Academic from './components/Academic';
 import Technical from './components/Technical';
-import Creative from './components/Creative';
+import CoCurricular from './components/CoCurricular';
 import Contact from './components/Contact';
 import './App.css';
 
@@ -16,8 +17,9 @@ function App() {
                 <Routes>
                     <Route path="/" element={<MainContent />} />
                     <Route path="/about" element={<About />} />
+                    <Route path="/academic" element={<Academic />} />
                     <Route path="/technical" element={<Technical />} />
-                    <Route path="/creative" element={<Creative />} />
+                    <Route path="/cocurricular" element={<CoCurricular />} />
                     <Route path="/contact" element={<Contact />} />
                 </Routes>
             </div>
