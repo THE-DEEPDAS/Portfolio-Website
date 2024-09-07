@@ -1,0 +1,25 @@
+.main-content {
+    flex-grow: 1;
+    background: linear-gradient(to right, #ff512f, #dd2476); /* Optional gradient */
+    padding: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-content h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.main-content p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
