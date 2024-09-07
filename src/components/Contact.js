@@ -14,21 +14,20 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        // Replace these IDs with your actual EmailJS service ID, template ID, and user ID
-        const serviceID = 'your_service_id';
-        const templateID = 'your_template_id';
-        const userID = 'your_user_id';
-
-        emailjs
-            .send(serviceID, templateID, formData, userID)
-            .then(() => {
-                alert('Message sent successfully!');
-            })
-            .catch(() => {
-                alert('Failed to send message.');
-            });
+    
+        emailjs.send('service_y1u2i5j', 'template_tlc8gp8', {
+            from_name: formData.name,     
+            reply_to: formData.email,     
+            message: formData.message,   
+        }, '1FbHQLVxPpA-QKhOg')
+        .then(() => {
+            alert('Message sent successfully!');
+        })
+        .catch(() => {
+            alert('Failed to send message.');
+        });
     };
+    
 
     return (
         <div className="contact-page">

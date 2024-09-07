@@ -1,14 +1,14 @@
 .sidebar {
     width: 250px;
     height: 100vh;
-    background: linear-gradient(to bottom, #1a1a1d, #262626); /* Dark gradient */
+    background: linear-gradient(to bottom, #1a1a1d, #262626); 
     padding: 20px;
-    color: #f0f0f0; /* Softer white for text */
+    color: #f0f0f0; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.5); /* Subtle shadow on the right */
-    font-family: 'Roboto', sans-serif; /* Ensure font consistency */
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.5); 
+    font-family: 'Roboto', sans-serif; 
 }
 
 .profile {
@@ -21,17 +21,17 @@
     width: 80px;
     height: 80px;
     margin-bottom: 15px;
-    border: 2px solid #f39c12; /* Orange accent for the profile pic */
+    border: 2px solid #f39c12; 
 }
 
 h2 {
     font-size: 20px;
-    color: #f39c12; /* Orange title for name */
+    color: #f39c12; 
     margin: 10px 0;
 }
 
 p {
-    color: #bbbbbb; /* Lighter gray for subtitle */
+    color: #bbbbbb; 
     font-size: 14px;
 }
 
@@ -58,6 +58,6 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #f39c12; /* Orange hover effect */
-    color: #1a1a1d; /* Dark text on hover */
+    background-color: #f39c12; 
+    color: #1a1a1d; 
 }

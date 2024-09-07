@@ -1,12 +1,12 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({ title, description, color }) => {
+const Card = ({ title, description, color, onClick }) => {
     return (
-        <div className={`card ${color}`}>
+        <div className={`card ${color}`} onClick={onClick}>
             <div className="card-content">
-                <h3>{description}</h3>
-                <p>{title}</p>
+                <h3>{title}</h3>
+                <p>{description}</p>
             </div>
         </div>
     );

@@ -3,5 +3,5 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background: linear-gradient(to right, #f39c12, #e74c3c, #2ecc71, #3498db); /* Optional gradient */
+  background: linear-gradient(to right, #f39c12, #e74c3c, #2ecc71, #3498db); 
 }
