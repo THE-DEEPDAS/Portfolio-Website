@@ -6,7 +6,7 @@ const Sidebar = () => {
     return (
         <div className="sidebar">
             <div className="profile">
-                <img src="profile.jpg" alt="Profile" className="profile-pic" />
+            <img src={require('./Assets/logo.png')} alt="Profile" className="profile-pic" />
                 <h2>Deep Das</h2>
                 <p>Creative Developer</p>
             </div>

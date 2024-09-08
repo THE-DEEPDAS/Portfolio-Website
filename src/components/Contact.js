@@ -33,6 +33,7 @@ const Contact = () => {
     return (
         <div className="contact-page">
             <h1>Contact Us</h1>
+            <h2>Hello, I'm Deep. If you wish to collaborate or have opportunities to offer, please include "Employer" in the name field, and I will reach out to you promptly. For general viewers, your suggestions and feedback are also highly welcomed.</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Name</label>

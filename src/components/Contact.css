@@ -77,3 +77,8 @@
   .contact-page button:hover {
     background: linear-gradient(45deg, #ff512f, #dd2476);
   }
+
+  h2{
+   
+    margin-left: 45px;
+  }

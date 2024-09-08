@@ -6,9 +6,10 @@ const Technical = () => {
     const images = [
         {
             image: [
-                'https://via.placeholder.com/600/0000FF',
-                'https://via.placeholder.com/600/00FF00',
-                'https://via.placeholder.com/600/FF0000'
+                require('./Assets/portfolio1.png'),
+                require('./Assets/portfolio2.png'),
+                require('./Assets/portfolio3.png'),
+                require('./Assets/portfolio4.png')
             ],
             title: 'PORTFOLIO WEBSITE',
             description: '🌐 Showcased my web development skills with a fully responsive and interactive portfolio website. Built with React and EmailJs. 🚀',
