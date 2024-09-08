@@ -1,17 +1,16 @@
-/* General Styles */
 .about-page {
     position: relative;
     background-color: white;
     padding: 20px;
-    margin-left: 20%; /* Adjust the margin relative to screen width */
+    margin-left: 20%;
     overflow-y: auto;
     max-height: 100vh;
-    box-sizing: border-box; /* Ensure padding and borders are included in the element's width and height */
+    box-sizing: border-box;
 }
 
 .page-content {
     position: relative;
-    max-width: 90%; /* Fluid width for responsiveness */
+    max-width: 90%;
     margin: 20px auto;
     background: white;
     padding: 20px;
@@ -20,10 +19,9 @@
 
 h1, h2 {
     color: #153E75;
-    text-align: center; /* Center text for smaller screens */
+    text-align: center;
 }
 
-/* Fluid Typography */
 h1 {
     font-size: 2.5rem;
 }
@@ -54,7 +52,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Skills Section */
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -70,7 +67,7 @@ a:hover {
 }
 
 .skill-item {
-    flex: 1 1 calc(50% - 10px); /* Flexibly distribute skill items */
+    flex: 1 1 calc(50% - 10px);
     font-size: 1.2rem;
     background: #c016cd;
     margin: 5px 0;
@@ -86,22 +83,19 @@ a:hover {
     color: #333;
 }
 
-/* Adjusting Skills Section for Mobile */
 @media screen and (max-width: 768px) {
     .skill-item {
-        flex: 1 1 100%; /* Make skill items take full width */
-        font-size: 1rem; /* Adjust font size for smaller screens */
+        flex: 1 1 100%;
+        font-size: 1rem;
     }
 }
 
-/* Image Container */
 .image-container {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
 
-/* Profile Image */
 .profile-image {
     width: 150px;
     height: 150px;
@@ -111,19 +105,17 @@ a:hover {
     transition: transform 0.3s ease;
 }
 
-/* Responsive Profile Image */
 @media screen and (max-width: 768px) {
     .profile-image {
         width: 100px;
-        height: 100px; /* Reduce image size on smaller screens */
+        height: 100px;
     }
 }
 
-/* Reduce Padding for Smaller Screens */
 @media screen and (max-width: 480px) {
     .about-page {
         margin-left: 10px;
-        padding: 10px; /* Reduce padding for mobile */
+        padding: 10px;
     }
 
     .page-content {
@@ -131,6 +123,6 @@ a:hover {
     }
 
     h1, h2 {
-        font-size: 1.5rem; /* Further reduce font sizes */
+        font-size: 1.5rem;
     }
 }

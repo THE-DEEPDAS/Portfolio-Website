@@ -3,11 +3,10 @@
     overflow-y: auto;
     padding: 20px;
     background: white;
-    margin-left: 290px; 
-    width: calc(100% - 250px); 
+    margin-left: 290px;
+    width: calc(100% - 290px); 
     box-sizing: border-box; 
 }
-
 
 .technical-gallery {
     display: flex;
@@ -16,27 +15,67 @@
     gap: 20px;
 }
 
-h1 {
+.technical-page h1 {
     margin-bottom: 30px;
     font-size: 2.5rem;
-    max-width: calc(100% - 250px);
-    color: #153E75; 
+    max-width: 100%; 
+    color: #153E75;
 }
 
-h2 , p{
+.technical-page h2, 
+.technical-page p {
     justify-content: center;
     text-align: center;
 }
 
+@media screen and (max-width: 1024px) {
+    .technical-page {
+        margin-left: 0; 
+        width: 100%; 
+    }
+
+    .technical-page h1 {
+        font-size: 2rem; 
+    }
+
+    .technical-gallery {
+        gap: 15px; 
+    }
+}
+
 @media screen and (max-width: 768px) {
     .technical-page {
-        margin-left: 0;
-        width: 100%;
+        margin-left: 0; 
+        width: 100%; 
+        padding: 15px; 
+    }
+
+    .technical-page h1 {
+        font-size: 1.8rem; 
+    }
+
+    .technical-gallery {
+        flex-direction: column; 
+        gap: 10px; 
     }
 
     .sidebar {
         width: 100%;
         height: auto;
         position: relative;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .technical-page {
+        padding: 10px; 
+    }
+
+    .technical-page h1 {
+        font-size: 1.6rem;
+    }
+
+    .technical-gallery {
+        gap: 5px;
     }
 }

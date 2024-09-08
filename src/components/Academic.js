@@ -71,7 +71,7 @@ const Academic = () => {
         <div className="academic-page" >
             <h1 >Welcome to my academic portfolio</h1>
             <p >
-                This page is dedicated to my Academic Background so Far, forgive my photography skills 📸
+                This page is dedicated to my Academic Background so far, forgive my photography skills 📸
             </p>
             <div className="academic-gallery">
                 {images.map((img, index) => (
