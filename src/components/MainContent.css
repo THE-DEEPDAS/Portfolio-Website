@@ -23,9 +23,19 @@
 
 .main-content p {
     font-size: 1.125rem;
+    justify-content: center;
     text-align: center;
     margin-bottom: 40px;
-    color: #153E75;
+    color: #712eb3;
+}
+
+.main-content h5{
+    font-size: 1.125rem;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1c56a1;
+    margin-left: 50px;
 }
 
 .cards {

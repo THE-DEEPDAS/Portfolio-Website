@@ -14,10 +14,10 @@ const MainContent = () => {
     return (
         <div className="main-content">
             <h1>👋 Hi, I'm Deep Das – Crafting Code into Magic!</h1>
-            <p>
+            <h5>
                 As a creative developer, I blend code and design to build unique, user-centric
                 experiences with the best functionalities. Let’s transform your ideas into dynamic digital solutions!
-            </p>
+            </h5>
             <div className="cards">
                 <Card 
                     title="My Story" 
