@@ -30,7 +30,7 @@ const MainContent = () => {
                     title="My Journey" 
                     description="Academic" 
                     color="blue" 
-                    icon="fa-smile" 
+                    icon="fa-book" 
                     onClick={() => handleNavigation('/academic')}
                 />
                 <Card 
