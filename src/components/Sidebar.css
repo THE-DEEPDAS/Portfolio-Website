@@ -66,3 +66,15 @@ nav ul li a:hover {
     background-color: #f39c12; 
     color: #1a1a1d; 
 }
+
+.profile h2 {
+    font-size: 2rem;
+    margin: 10px 0; /* Adjust spacing between h2 and p */
+}
+
+/* Styling for Creative Developer (p) */
+.profile p {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #ccc; /* Color for the subtitle */
+}
