@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
+import Navigation from './components/Navigation';
 import MainContent from './components/MainContent';
 import About from './components/About';
 import Academic from './components/Academic';
@@ -36,7 +36,7 @@ const App = () => {
                     </div>
                 ) : (
                     <>
-                        <Sidebar />
+                        <Navigation />
                         <Routes>
                             <Route path="/" element={<MainContent />} />
                             <Route path="/about" element={<About />} />

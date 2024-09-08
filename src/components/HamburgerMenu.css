@@ -1,0 +1,95 @@
+/* Hamburger Icon */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+}
+
+/* Default line color */
+.hamburger-line {
+    width: 100%;
+    height: 3px;
+    background-color: #153E75; /* Dark blue color */
+    transition: all 0.3s ease;
+}
+
+/* Line color when menu is open */
+.hamburger-menu.open .hamburger-line {
+    background-color: white; /* Change to white when menu is open */
+}
+
+/* Menu Background */
+.dropdown-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    min-height: 100vh;
+    background-color: #153E75; 
+    box-shadow: 2px 0 15px rgba(26, 26, 26, 0.3);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.dropdown-menu.open {
+    transform: translateX(0);
+}
+
+/* Profile Section */
+.dropdown-menu .profile {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.dropdown-menu .profile-pic {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    border: 3px solid #543e3e; 
+}
+
+.dropdown-menu h2, .dropdown-menu p {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Navigation Links */
+.dropdown-menu nav ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.dropdown-menu nav ul li {
+    margin: 20px 0;
+}
+
+.dropdown-menu nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+    text-align: left;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s ease-in;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-menu nav ul li a:hover {
+    background-color: #ba31b4; 
+    color: white;
+    font-weight: bolder; 
+}

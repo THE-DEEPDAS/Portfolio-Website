@@ -56,7 +56,7 @@ nav ul li a {
     display: block;
     text-align: left;
     border-radius: 8px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s ease-in;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
