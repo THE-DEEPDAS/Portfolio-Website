@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Card from './Card';
 import './MainContent.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const MainContent = () => {
     const navigate = useNavigate();
@@ -12,34 +13,45 @@ const MainContent = () => {
 
     return (
         <div className="main-content">
-            <h1>👋 Hello, I'm Deep Das–Turning Coffee and Code into AI Magic!</h1>
+            <h1>👋 Hi, I'm Deep Das – Crafting Code into Magic!</h1>
             <p>
                 As a creative developer, I blend code and design to build unique, user-centric
-                experiences with best possible functionalities. Let's turn your ideas into a dynamic and engaging digital reality!
+                experiences with the best functionalities. Let’s transform your ideas into dynamic digital solutions!
             </p>
             <div className="cards">
                 <Card 
-                    title="A Peek into My Creative Journey" 
+                    title="My Story" 
                     description="About" 
-                    color="orange" 
+                    color="blue" 
+                    icon="fa-smile" 
                     onClick={() => handleNavigation('/about')}
                 />
                 <Card 
-                    title="Top Work and Technical Projects" 
+                    title="My Journey" 
+                    description="Academic" 
+                    color="blue" 
+                    icon="fa-smile" 
+                    onClick={() => handleNavigation('/academic')}
+                />
+                <Card 
+                    title="My Work" 
                     description="Technical" 
-                    color="red" 
+                    color="blue" 
+                    icon="fa-briefcase" 
                     onClick={() => handleNavigation('/technical')}
                 />
                 <Card 
-                    title="Creative Solutions to Meet Your Goals" 
-                    description="Creative" 
-                    color="green" 
-                    onClick={() => handleNavigation('/creative')}
+                    title="Creative Solutions" 
+                    description="Co-Curriculars" 
+                    color="blue" 
+                    icon="fa-cogs" 
+                    onClick={() => handleNavigation('/cocurricular')}
                 />
                 <Card 
-                    title="Let's Start a Conversation" 
+                    title="Get in Touch" 
                     description="Contact" 
                     color="blue" 
+                    icon="fa-envelope" 
                     onClick={() => handleNavigation('/contact')}
                 />
             </div>

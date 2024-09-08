@@ -4,6 +4,42 @@
   align-items: center;      
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(to right, #ff512f, #dd2476);
+  background-color: white;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 20px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    flex-direction: column; 
+    padding: 10px;
+  }
+}
+
+.accent-element {
+  color: #3cb371; 
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  background-color: rgba(255, 255, 255, 0.8); 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.loader-video {
+  width: 400px; 
+  height: 400px; 
+  border-radius: 10px; 
 }

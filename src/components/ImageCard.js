@@ -7,7 +7,7 @@ const ImageCard = ({ image, title, description }) => {
 
     const openImage = () => {
         setIsOpen(true);
-        setCurrentImageIndex(0); // Reset to first image on open
+        setCurrentImageIndex(0); 
     };
 
     const closeImage = () => {

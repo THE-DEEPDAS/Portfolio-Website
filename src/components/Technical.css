@@ -2,7 +2,7 @@
     max-height: 100vh;
     overflow-y: auto;
     padding: 20px;
-    background: linear-gradient(to right, #ff512f, #dd2476);
+    background: white;
     margin-left: 290px; 
     width: calc(100% - 250px); 
     box-sizing: border-box; 
@@ -19,7 +19,13 @@
 h1 {
     margin-bottom: 30px;
     font-size: 2.5rem;
-    max-width: calc(100% - 250px); 
+    max-width: calc(100% - 250px);
+    color: #153E75; 
+}
+
+h2 , p{
+    justify-content: center;
+    text-align: center;
 }
 
 @media screen and (max-width: 768px) {

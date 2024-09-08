@@ -2,7 +2,7 @@
     max-height: 100vh; 
     overflow-y: auto; 
     padding: 20px; 
-    background: linear-gradient(to right, #ff512f, #dd2476); 
+    background: white; 
     margin-left: 250px;
     display: flex;
     flex-direction: column;
@@ -21,10 +21,12 @@ h1 {
     margin-bottom: 20px;
     font-size: 2rem;
     font-weight: bold;
+    color: #153E75;
 }
 
 p{
     margin-bottom: 20px;
     font-size: 1.2rem;
     font-weight: bold;
+    color: #153E75;
 }

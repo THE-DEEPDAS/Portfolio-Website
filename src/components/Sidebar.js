@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';  
 import './Sidebar.css';
+import Video from './Assets/Deep das.gif';
 
 const Sidebar = () => {
     return (
         <div className="sidebar">
             <div className="profile">
-            <img src={require('./Assets/logo.png')} alt="Profile" className="profile-pic" />
+            <img src={Video} alt="Profile" className="profile-pic" />
                 <h2>Deep Das</h2>
                 <p>Creative Developer</p>
             </div>
