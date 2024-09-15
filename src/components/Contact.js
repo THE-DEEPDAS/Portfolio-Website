@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-import './Contact.css'
+import './Contact.css';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -15,20 +15,31 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-    
+
+        // Send contact message to yourself
         emailjs.send('service_y1u2i5j', 'template_tlc8gp8', {
             from_name: formData.name,     
             reply_to: formData.email,     
             message: formData.message,   
         }, '1FbHQLVxPpA-QKhOg')
         .then(() => {
-            alert('Message sent successfully!');
+            // Send acknowledgment email to the sender
+            emailjs.send('service_y1u2i5j', 'template_gyd327m', {
+                to_email: formData.email,  // Sender's email
+                from_name: 'Deep',         
+                message: 'Thank you for your message! I will get back to you as soon as possible.',
+            }, '1FbHQLVxPpA-QKhOg')
+            .then(() => {
+                alert('Message sent successfully! Acknowledgment has been sent to your email.');
+            })
+            .catch(() => {
+                alert('Failed to send acknowledgment email.');
+            });
         })
         .catch(() => {
             alert('Failed to send message.');
         });
     };
-    
 
     return (
         <div className="contact-page">
