@@ -16,11 +16,12 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Send contact message to yourself
+        // Send contact message to your email
         emailjs.send('service_y1u2i5j', 'template_tlc8gp8', {
             from_name: formData.name,     
             reply_to: formData.email,     
             message: formData.message,   
+            to_email: 'deepdblm@outlook.com', // Your email
         }, '1FbHQLVxPpA-QKhOg')
         .then(() => {
             // Send acknowledgment email to the sender
