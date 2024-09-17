@@ -15,32 +15,35 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+    
         // Send contact message to yourself
         emailjs.send('service_y1u2i5j', 'template_tlc8gp8', {
-            to_email: 'deepdblm@outlook.com',  // Your email address
-            from_name: formData.name,     
-            reply_to: formData.email,     
-            message: formData.message,   
+            to_email: 'deepdblm@outlook.com',
+            from_name: formData.name,
+            reply_to: formData.email,  // Ensure this is correctly populated
+            message: formData.message,
         }, '1FbHQLVxPpA-QKhOg')
         .then(() => {
             // Send acknowledgment email to the sender
             emailjs.send('service_y1u2i5j', 'template_gyd327m', {
                 to_email: formData.email,  // Sender's email
-                from_name: 'Deep',         
+                from_name: 'Deep',
+                reply_to: formData.email,  // Ensure this is correctly populated
                 message: 'Thank you for your message! I will get back to you as soon as possible.',
             }, '1FbHQLVxPpA-QKhOg')
             .then(() => {
                 alert('Message sent successfully! Acknowledgment has been sent to your email.');
             })
-            .catch(() => {
+            .catch((error) => {
+                console.error('Error sending acknowledgment email:', error);
                 alert('Failed to send acknowledgment email.');
             });
         })
-        .catch(() => {
+        .catch((error) => {
+            console.error('Error sending contact message:', error);
             alert('Failed to send message.');
         });
-    };
+    };    
 
     return (
         <div className="contact-page">
