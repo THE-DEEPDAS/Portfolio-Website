@@ -32,7 +32,7 @@ const Contact = () => {
                 message: 'Thank you for your message! I will get back to you as soon as possible.',
             }, '1FbHQLVxPpA-QKhOg')
             .then(() => {
-                alert('Message sent successfully! Acknowledgment has been sent to your email.');
+                alert('Message recieved successfully! Acknowledgment has been sent to your email.');
             })
             .catch((error) => {
                 console.error('Error sending acknowledgment email:', error);
@@ -41,7 +41,7 @@ const Contact = () => {
         })
         .catch((error) => {
             console.error('Error sending contact message:', error);
-            alert('Failed to send message.');
+            alert('Failed to recieve message.');
         });
     };    
 
