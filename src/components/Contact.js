@@ -16,12 +16,12 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Send contact message to your email
+        // Send contact message to yourself
         emailjs.send('service_y1u2i5j', 'template_tlc8gp8', {
+            to_email: 'deepdblm@outlook.com',  // Your email address
             from_name: formData.name,     
             reply_to: formData.email,     
             message: formData.message,   
-            to_email: 'deepdblm@outlook.com', // Your email
         }, '1FbHQLVxPpA-QKhOg')
         .then(() => {
             // Send acknowledgment email to the sender
@@ -45,7 +45,7 @@ const Contact = () => {
     return (
         <div className="contact-page">
             <h1>Contact Us</h1>
-            <h2>Hello, I'm Deep. If you wish to collaborate or have opportunities to offer, please include "Employer" in the name field, and I will reach out to you promptly. For general viewers, your suggestions and feedback are also highly welcomed.</h2>
+            <h2>Hello, I'm Deep. If you wish to collaborate or have opportunities to offer, please include "Employer" in the name field, and I will reach out to you as soon as possible. For general viewers, your suggestions and feedback are also highly welcomed.</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Name</label>
