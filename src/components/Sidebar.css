@@ -43,7 +43,7 @@ h2 {
 }
 
 p {
-    color: #ffffff; /* White text */
+    color: #ffffff !important; /* White text */
     font-size: 14px;
 }
 
@@ -118,7 +118,7 @@ button:hover {
 }
 
 .profile h2, .profile p {
-    color: white; /* White text */
+    color: white !important; /* White text */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin: 0;
     text-align: center;
