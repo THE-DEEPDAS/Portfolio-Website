@@ -19,6 +19,7 @@ const Sidebar = () => {
                     <li><Link to="/technical">Technical</Link></li>
                     <li><Link to="/cocurricular">Co-Curriculars</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
+                    <li><Link to="/testimonials">Testimonials</Link></li>
                 </ul>
             </nav>
         </div>

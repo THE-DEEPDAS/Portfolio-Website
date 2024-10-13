@@ -9,6 +9,7 @@ import CoCurricular from './components/CoCurricular';
 import Contact from './components/Contact';
 import './App.css';
 import LoaderVideo from './components/Assets/loader.mp4'; 
+import Testimonials from './components/Testimonials';
 
 const App = () => {
     const [loading, setLoading] = useState(true);
@@ -43,7 +44,8 @@ const App = () => {
                             <Route path="/academic" element={<Academic />} />
                             <Route path="/technical" element={<Technical />} />
                             <Route path="/cocurricular" element={<CoCurricular />} />
-                            <Route path="/contact" element={<Contact />} />
+                                <Route path="/contact" element={<Contact />} />
+                                <Route path="/testimonials" element={<Testimonials />} />
                         </Routes>
                     </>
                 )}

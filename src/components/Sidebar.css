@@ -1,6 +1,6 @@
 .sidebar {
     width: 250px;
-    min-height: 100vh;
+    height: 100vh;
     background-color: #153E75; 
     padding: 20px;
     color: #e0e0e0; 
@@ -12,6 +12,8 @@
     position: fixed;
     top: 0;
     left: 0;
+    overflow-y: auto;
+    z-index: 1000;
 }
 
 .profile {
@@ -91,52 +93,10 @@ button:hover {
     justify-content: center;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    width: 100%;
-}
-
-nav ul li {
-    margin: 20px 0;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 10px;
-    display: block;
-    text-align: left;
-    border-radius: 8px;
-    transition: background-color 0.3s, color 0.3s;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-nav ul li a:hover {
-    background-color: #ba31b4; 
-    color: white;
-    font-weight: bolder; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-button {
-    background-color: #3c1f1f; 
-    color: #ffffff; 
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-button:hover {
-    background-color: #ba31b4;
-}
-
-.profile h2, .profile p{
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
 }
