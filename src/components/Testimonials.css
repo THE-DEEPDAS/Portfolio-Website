@@ -17,9 +17,9 @@ body {
 
 .testimonials-container {
   width: calc(100% - 270px); /* Adjusted width to account for new margin */
-  margin-left: 270px; /* Increased margin-left */
+  margin-left: 250px; /* Increased margin-left */
   padding: 2rem;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+  background: black;
   border-radius: 15px;
   box-shadow: 0 0 30px rgba(138, 43, 226, 0.3);
   animation: glow 3s infinite, fadeIn 1s ease-out;

@@ -1,39 +1,80 @@
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(138, 43, 226, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(138, 43, 226, 0.5);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 .contact-page {
-  margin: auto;
-  max-height: 100vh;
+  width: calc(100% - 270px);
+  margin-left: 270px; /* Adjust this if needed */
+  padding: 2rem; /* Adjust padding as needed */
+  background: black;
+  box-shadow: none; /* Adjust or remove this if needed */
+  animation: glow 3s infinite, fadeIn 1s ease-out;
   overflow-y: auto;
-  padding: 20px;
+  height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
-  width: calc(100% - 250px);
-  margin-left: 250px;
   box-sizing: border-box;
-  min-height: 100vh;
+  margin-top: 0; /* Set to 0 to remove any top margin */
+  padding: 20px; /* Add padding as needed */
+  background-color: #1a1a1a; /* Dark background */
+  color: #ffffff; /* White text */
+  flex: 1; /* Allow it to grow and fill the space */
 }
 
 .contact-page form {
   width: 100%;
   max-width: 600px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.1);
+  margin: 2rem auto 0;
+  background: rgba(26, 26, 26, 0.8);
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0; /* Removed border-radius */
+  box-shadow: none; /* Adjust or remove this if needed */
   backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(138, 43, 226, 0.2);
+  animation: fadeIn 0.5s ease-out;
 }
 
 .contact-page h1 {
-  margin: 0; /* Reset margin */
-  padding-top: 20px; /* Ensure there's space above */
-  font-size: 2rem;
+  margin: 2rem 0;
+  font-size: 2.5rem;
   font-weight: bold;
-  color: #153E75;
+  color: #e6e6e6;
   width: 100%;
-  max-width: 800px; /* Limit width */
+  max-width: 800px;
+  text-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
+  text-align: center;
+  font-size: 2rem;
+  text-shadow: 0 0 10px rgba(138, 43, 226, 0.8); /* Glowing effect */
 }
 
 .contact-page .form-group {
@@ -45,18 +86,27 @@
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #153E75;
+  color: #e6e6e6;
 }
 
 .contact-page .form-group input,
 .contact-page .form-group textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid rgba(37, 146, 243, 0.5);
-  border-radius: 5px;
+  border: 1px solid rgba(138, 43, 226, 0.5);
+  border-radius: 8px;
   font-size: 1rem;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #1c56a1;
+  background-color: rgba(26, 26, 26, 0.8);
+  color: #cccccc;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.contact-page .form-group input:focus,
+.contact-page .form-group textarea:focus {
+  border-color: #9b59b6;
+  box-shadow: 0 0 10px rgba(155, 89, 182, 0.8);
+  outline: none;
 }
 
 .contact-page .form-group textarea {
@@ -65,36 +115,52 @@
 }
 
 .contact-page button {
-  background: #ba31b4;
-  color: #153E75;
+  background: #8e44ad;
+  color: white;
   border: none;
   padding: 12px 20px;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 1rem;
-  transition: background 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
 }
 
 .contact-page button:hover {
-  background: #a829a5;
-  transform: scale(1.05);
+  background: #9b59b6;
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(138, 43, 226, 0.8);
+}
+
+.contact-page button:active {
+  transform: translateY(0);
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
 }
 
 h2 {
-  color: #1c56a1;
-  margin-left: 45px;
+  color: #e6e6e6;
+  margin-left: 0;
+  text-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
+}
+
+p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 20px 0; /* Add margin for spacing */
 }
 
 @media screen and (max-width: 1024px) {
   .contact-page {
     margin-left: 0;
     width: 100%;
-    padding: 15px;
+    padding: 1rem;
+    border-radius: 0; /* Ensure no rounding on smaller screens */
+    height: auto;
+    min-height: calc(100vh - 2rem);
   }
 
   .contact-page h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .contact-page form {
@@ -104,17 +170,15 @@ h2 {
 
 @media screen and (max-width: 768px) {
   .contact-page {
-    margin-left: 0;
-    width: 100%;
-    padding: 10px;
+    padding: 1rem;
   }
 
   .contact-page h1 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .contact-page form {
-    max-width: 90%;
+    max-width: 100%;
   }
 
   .contact-page .form-group input,
@@ -125,14 +189,10 @@ h2 {
 
 @media screen and (max-width: 480px) {
   .contact-page {
-    padding: 5px;
+    padding: 0.5rem;
   }
 
   .contact-page h1 {
-    font-size: 1.4rem;
-  }
-
-  .contact-page form {
-    max-width: 100%;
+    font-size: 1.6rem;
   }
 }

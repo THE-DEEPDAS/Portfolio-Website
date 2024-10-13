@@ -2,8 +2,8 @@
     max-height: 100vh;
     overflow-y: auto;
     padding: 20px;
-    background: white;
-    margin-left: 20%;
+    background: #1a1a1a; /* Dark background */
+    margin-left: 270px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,6 +11,7 @@
     box-sizing: border-box;
     width: 100%;
     overflow-x: hidden;
+    color: #ffffff; /* White text */
 }
 
 .academic-gallery {
@@ -25,14 +26,15 @@ h1 {
     margin-bottom: 20px;
     font-size: 2rem;
     font-weight: bold;
-    color: #153E75;
+    color: #e6e6e6; /* Light color for headings */
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.8); /* Glowing effect */
 }
 
 p {
     margin-bottom: 20px;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #1c56a1;
+    color: #e6e6e6; /* Light color for paragraphs */
 }
 
 @media screen and (max-width: 768px) {

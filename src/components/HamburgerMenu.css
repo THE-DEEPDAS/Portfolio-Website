@@ -86,7 +86,7 @@ body {
     display: block;
     text-align: left;
     border-radius: 8px;
-    transition: background-color 0.3s, color 0.3s ease-in;
+    transition: background-color 0.3s, color 0.3s ease-in, box-shadow 0.3s ease-in;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -94,6 +94,14 @@ body {
     background-color: #ba31b4; 
     color: white;
     font-weight: bolder; 
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.8); /* Glowing effect */
+}
+
+.dropdown-menu nav ul li a.hover-effect {
+    background-color: #ba31b4; /* Simulated hover background */
+    color: white;
+    font-weight: bolder; 
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.8); /* Glowing effect */
 }
 
 @media screen and (max-width: 768px) {

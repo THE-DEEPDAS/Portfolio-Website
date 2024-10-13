@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './HamburgerMenu.css';
 import Video from './Assets/Deep das.gif';
@@ -9,6 +9,26 @@ const HamburgerMenu = () => {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+
+    useEffect(() => {
+        const links = document.querySelectorAll('.dropdown-menu nav ul li a');
+        let index = 0;
+
+        const interval = setInterval(() => {
+            if (isOpen && index < links.length) {
+                links[index].classList.add('hover-effect');
+                setTimeout(() => {
+                    links[index].classList.remove('hover-effect');
+                    index++;
+                }, 1000); // Duration of hover effect
+            } else if (!isOpen) {
+                clearInterval(interval); // Stop if the menu is closed
+                index = 0; // Reset index when menu is closed
+            }
+        }, 2000); // Change every 2 seconds
+
+        return () => clearInterval(interval); // Cleanup on unmount
+    }, [isOpen]); // Run effect when isOpen changes
 
     return (
         <>
