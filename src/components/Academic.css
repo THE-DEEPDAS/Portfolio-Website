@@ -34,7 +34,7 @@ p {
     margin-bottom: 20px;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #e6e6e6; /* Light color for paragraphs */
+    color: #00aaff; /* Light color for paragraphs */
 }
 
 @media screen and (max-width: 768px) {

@@ -1,15 +1,34 @@
 import React from 'react';
 import ImageCard from './ImageCard';
-import './Technical.css'
+import './Technical.css';
 
 const Technical = () => {
-    const images = [
+    // Experience data (grouped like projects)
+    const experiences = [
+        {
+            image: [
+                require('./Assets/greatnotes1.png'),
+                require('./Assets/greatnotes2.png'),
+                require('./Assets/greatnotes3.png'),
+                require('./Assets/greatnotes4.png'),
+                require('./Assets/greatnotes5.png'),
+                require('./Assets/greatnotes6.png'),
+            ],
+            title: 'GreatNotes',
+            description: 'This was my first commercially deployed project, showcasing my skills in full-stack development and project management.',
+        }
+    ];
+
+    // Other projects
+    const projects = [
         {
             image: [
                 require('./Assets/portfolio1.png'),
                 require('./Assets/portfolio2.png'),
                 require('./Assets/portfolio3.png'),
-                require('./Assets/portfolio4.png')
+                require('./Assets/portfolio4.png'),
+                require('./Assets/portfolio5.png'),
+                require('./Assets/portfolio6.png'),
             ],
             title: 'PORTFOLIO WEBSITE',
             description: '🌐 Showcased my web development skills with a fully responsive and interactive portfolio website. Built with React and EmailJs. 🚀',
@@ -56,7 +75,7 @@ const Technical = () => {
                 require('./Assets/codeforces3.png'),
             ],
             title: 'CODEFORCES PROFILE',
-            description: '🏆 Profile showcasing my competitive programming achievements and problem-solving skills on Codeforces. Focused on algorithmic challenges and contests. 💡 Visit https://codeforces.com/profile/deepdblm for latest info</li>',
+            description: '🏆 Profile showcasing my competitive programming achievements and problem-solving skills on Codeforces. Focused on algorithmic challenges and contests. 💡 Visit https://codeforces.com/profile/deepdblm for latest info',
         },
         {
             image: [
@@ -72,7 +91,7 @@ const Technical = () => {
                 require('./Assets/hackout2.jpg'),
                 require('./Assets/hackout3.jpg'),
             ],
-            title: 'HACKOUT,DAIICT HACKATHON',
+            title: 'HACKOUT, DAIICT HACKATHON',
             description: '🏅 Participated in HackOut, a hackathon organized by DAIICT. Collaborated with a team to develop an innovative solution to a real-world problem. 💡',
         },
         {
@@ -88,45 +107,41 @@ const Technical = () => {
     ];
 
     return (
-        <div
-            className="technical-page"
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                textAlign: 'center',
-            }}
-        >
-            <h1
-                style={{
-                    fontWeight: 'bold',
-                    fontSize: '2rem',
-                    marginBottom: '20px',
-                }}
-            >
-                Welcome to my technical portfolio
-            </h1>
+        <div className="technical-page">
+            <h1>Welcome to my technical portfolio</h1>
             <p>
-            Explore a comprehensive overview of my technical skills, projects, and achievements. Here, you can delve into the details of each project and gain insights into the work I have accomplished. Discover how I apply my knowledge and expertise to create impactful solutions.
+                Explore a comprehensive overview of my technical skills, projects, and achievements. Here, you can delve into the details of each project and gain insights into the work I have accomplished. Discover how I apply my knowledge and expertise to create impactful solutions.
             </p>
-            <div
-                className="technical-gallery"
-                style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    flexWrap: 'wrap',
-                    gap: '20px',
-                }}
-            >
-                {images.map((img, index) => (
-                    <ImageCard
-                        key={index}
-                        image={img.image}
-                        title={img.title}
-                        description={img.description}
-                    />
-                ))}
-            </div>
+
+            {/* Experiences Section */}
+            <section className="experiences-section">
+                <h2>Experiences</h2>
+                <div className="technical-gallery">
+                    {experiences.map((exp, index) => (
+                        <ImageCard
+                            key={index}
+                            image={Array.isArray(exp.image) ? exp.image : [exp.image]}
+                            title={exp.title}
+                            description={exp.description}
+                        />
+                    ))}
+                </div>
+            </section>
+
+            {/* Projects Section */}
+            <section className="projects-section">
+                <h2>Projects</h2>
+                <div className="technical-gallery">
+                    {projects.map((project, index) => (
+                        <ImageCard
+                            key={index}
+                            image={Array.isArray(project.image) ? project.image : [project.image]}
+                            title={project.title}
+                            description={project.description}
+                        />
+                    ))}
+                </div>
+            </section>
         </div>
     );
 };

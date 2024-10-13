@@ -24,6 +24,14 @@
     text-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
 }
 
+p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00aaff !important; /* Changed to a visible shade of blue */
+}
+
+
 .technical-page h2,
 .technical-page p {
     justify-content: center;
