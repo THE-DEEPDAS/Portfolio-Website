@@ -51,6 +51,7 @@ const HamburgerMenu = () => {
                         <li><Link to="/technical" onClick={toggleMenu}>Technical</Link></li>
                         <li><Link to="/cocurricular" onClick={toggleMenu}>Co-Curriculars</Link></li>
                         <li><Link to="/contact" onClick={toggleMenu}>Contact</Link></li>
+                        <li><Link to="/testimonials" onClick={toggleMenu}>Testimonials</Link></li>
                     </ul>
                 </nav>
             </div>

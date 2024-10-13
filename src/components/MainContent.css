@@ -206,3 +206,17 @@
     margin-left: 0;
   }
 }
+
+@media (min-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr); /* 3 boxes per row */
+    grid-template-rows: repeat(2, auto); /* 2 rows total */
+    gap: 60px; /* Maintain space between the cards */
+    justify-items: center;
+  }
+
+  .card {
+    width: 100%; /* Ensure cards take full width of their grid cell */
+    max-width: 300px; /* Optionally limit the max width of each card */
+  }
+}

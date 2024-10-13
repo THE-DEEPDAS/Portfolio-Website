@@ -23,36 +23,43 @@ const MainContent = () => {
                     title="My Story" 
                     description="About" 
                     color="blue" 
-                    icon="fa-smile" 
+                    icon="fas fa-smile" // Updated icon class for FontAwesome
                     onClick={() => handleNavigation('/about')}
                 />
                 <Card 
                     title="My Journey" 
                     description="Academic" 
                     color="blue" 
-                    icon="fa-book" 
+                    icon="fas fa-book" // Updated icon class
                     onClick={() => handleNavigation('/academic')}
                 />
                 <Card 
                     title="My Work" 
                     description="Technical" 
                     color="blue" 
-                    icon="fa-briefcase" 
+                    icon="fas fa-briefcase" // Updated icon class
                     onClick={() => handleNavigation('/technical')}
                 />
                 <Card 
                     title="Creative Solutions" 
                     description="Co-Curriculars" 
                     color="blue" 
-                    icon="fa-cogs" 
+                    icon="fas fa-cogs" // Updated icon class
                     onClick={() => handleNavigation('/cocurricular')}
                 />
                 <Card 
                     title="Get in Touch" 
                     description="Contact" 
                     color="blue" 
-                    icon="fa-envelope" 
+                    icon="fas fa-envelope" // Updated icon class
                     onClick={() => handleNavigation('/contact')}
+                />
+                <Card 
+                    title="Reviews!" 
+                    description="Testimonials" 
+                    color="blue" 
+                    icon="fas fa-comments" // Corrected icon class (fa-mail is not a FontAwesome icon)
+                    onClick={() => handleNavigation('/testimonials')}
                 />
             </div>
         </div>
