@@ -32,6 +32,8 @@ body {
 .contact-page {
   width: calc(100% - 270px);
   margin-left: 270px; /* Adjust this if needed */
+  margin-top: 0px;
+  margin-bottom: 0px;
   padding: 2rem; /* Adjust padding as needed */
   background: black;
   box-shadow: none; /* Adjust or remove this if needed */
@@ -46,7 +48,7 @@ body {
   box-sizing: border-box;
   margin-top: 0; /* Set to 0 to remove any top margin */
   padding: 20px; /* Add padding as needed */
-  background-color: #1a1a1a; /* Dark background */
+  background-color: black; /* Dark background */
   color: #ffffff; /* White text */
   flex: 1; /* Allow it to grow and fill the space */
 }
