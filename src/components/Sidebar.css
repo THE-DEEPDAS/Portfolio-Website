@@ -1,7 +1,7 @@
 .sidebar {
     width: 250px;
     height: 100vh;
-    background-color: #153E75; /* Match hamburger menu background */
+    background-color: rgb(37, 36, 36) !important; /* Match hamburger menu background */
     padding: 20px;
     color: #e0e0e0; 
     display: flex;

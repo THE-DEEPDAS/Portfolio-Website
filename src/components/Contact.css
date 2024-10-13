@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+/* Keyframes for Glow and Fade-in effects */
 @keyframes glow {
   0% {
     box-shadow: 0 0 5px rgba(138, 43, 226, 0.5);
@@ -29,144 +33,117 @@ body {
   overflow-x: hidden;
 }
 
+/* Contact Page Styling */
 .contact-page {
   width: calc(100% - 270px);
-  margin-left: 270px; /* Adjust this if needed */
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding: 2rem; /* Adjust padding as needed */
+  margin-left: 270px;
+  margin-top: 0; /* Set to 0 to remove top margin */
+  padding: 2rem 20px; /* Adjust padding as needed */
   background: black;
-  box-shadow: none; /* Adjust or remove this if needed */
+  box-shadow: none;
   animation: glow 3s infinite, fadeIn 1s ease-out;
-  overflow-y: auto;
-  height: calc(100vh - 4rem);
+  /* overflow-y: auto; */
+  scroll-behavior: smooth;
+  min-height: 100vh; /* Full viewport height */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   text-align: center;
   box-sizing: border-box;
-  margin-top: 0; /* Set to 0 to remove any top margin */
-  padding: 20px; /* Add padding as needed */
-  background-color: black; /* Dark background */
-  color: #ffffff; /* White text */
-  flex: 1; /* Allow it to grow and fill the space */
 }
 
-.contact-page form {
-  width: 100%;
-  max-width: 600px;
-  margin: 2rem auto 0;
-  background: rgba(26, 26, 26, 0.8);
+/* Sidebar Styling - Complementary color
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #00695c; 
   padding: 20px;
-  border-radius: 0; /* Removed border-radius */
-  box-shadow: none; /* Adjust or remove this if needed */
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(138, 43, 226, 0.2);
-  animation: fadeIn 0.5s ease-out;
-}
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 0 15px rgba(26, 26, 26, 0.3);
+  font-family: 'Poppins', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: 1000;
+} */
 
-.contact-page h1 {
-  margin: 2rem 0;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #e6e6e6;
-  width: 100%;
-  max-width: 800px;
-  text-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
+/* Profile section in Sidebar */
+.profile {
   text-align: center;
-  font-size: 2rem;
-  text-shadow: 0 0 10px rgba(138, 43, 226, 0.8); /* Glowing effect */
+  margin-bottom: 40px;
 }
 
-.contact-page .form-group {
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.contact-page .form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #e6e6e6;
-}
-
-.contact-page .form-group input,
-.contact-page .form-group textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid rgba(138, 43, 226, 0.5);
-  border-radius: 8px;
-  font-size: 1rem;
-  background-color: rgba(26, 26, 26, 0.8);
-  color: #cccccc;
+.profile-pic {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+  border: 3px solid #82b1ff; /* Light Blue for contrast */
   transition: all 0.3s ease;
-  box-sizing: border-box;
 }
 
-.contact-page .form-group input:focus,
-.contact-page .form-group textarea:focus {
-  border-color: #9b59b6;
-  box-shadow: 0 0 10px rgba(155, 89, 182, 0.8);
-  outline: none;
+.profile-pic:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
 }
 
-.contact-page .form-group textarea {
-  height: 150px;
-  resize: vertical;
+/* Sidebar heading */
+.sidebar h2 {
+  font-size: 20px;
+  color: #ffffff;
+  margin: 10px 0;
+  text-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
 }
 
-.contact-page button {
-  background: #8e44ad;
+/* Sidebar text */
+.sidebar p {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+/* Sidebar navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+nav ul li {
+  margin: 20px 0;
+}
+
+nav ul li a {
   color: white;
-  border: none;
-  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+  text-align: left;
   border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
 }
 
-.contact-page button:hover {
-  background: #9b59b6;
-  transform: translateY(-2px);
-  box-shadow: 0 0 25px rgba(138, 43, 226, 0.8);
+nav ul li a:hover {
+  background-color: #ba31b4;
+  color: #ffffff;
 }
 
-.contact-page button:active {
-  transform: translateY(0);
-  box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
-}
-
-h2 {
-  color: #e6e6e6;
-  margin-left: 0;
-  text-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
-}
-
-p {
-  text-align: center;
-  font-size: 1.2rem;
-  margin: 20px 0; /* Add margin for spacing */
-}
-
+/* Responsive Design Adjustments */
 @media screen and (max-width: 1024px) {
   .contact-page {
     margin-left: 0;
     width: 100%;
     padding: 1rem;
-    border-radius: 0; /* Ensure no rounding on smaller screens */
     height: auto;
     min-height: calc(100vh - 2rem);
-  }
-
-  .contact-page h1 {
-    font-size: 2rem;
-  }
-
-  .contact-page form {
-    padding: 15px;
   }
 }
 
@@ -197,4 +174,25 @@ p {
   .contact-page h1 {
     font-size: 1.6rem;
   }
+}
+/* Make the main content scrollable */
+.main-content {
+  overflow-y: auto;
+  max-height: 100vh; /* Ensure the height doesn't exceed the viewport */
+  padding: 20px; /* Add padding to avoid cutting content */
+}
+
+/* Ensure form elements do not get cut off */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around; /* Adjust spacing */
+  padding: 10px; /* Provide space around elements */
+}
+
+input, textarea {
+  width: 100%; /* Allow inputs to expand fully */
+  max-width: 100%;
+  box-sizing: border-box; /* Ensure padding doesn't cause overflow */
 }
