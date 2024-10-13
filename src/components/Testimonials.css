@@ -27,14 +27,6 @@ body {
   height: calc(100vh - 40px);
 }
 
-@media (max-width: 768px) {
-  .testimonials-container {
-    width: calc(100% - 40px); /* Adjusted width for smaller screens */
-    margin-left: 20px; /* Added margin-left for smaller screens */
-    height: auto;
-  }
-}
-
 .testimonials-container h2 {
   text-align: center;
   color: #e6e6e6;
@@ -130,4 +122,46 @@ body {
 .add-testimonial-btn:active {
   transform: translateY(0);
   box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+  .testimonials-container {
+    width: calc(100% - 40px); /* Adjusted width for smaller screens */
+    margin-left: 20px; /* Added margin-left for smaller screens */
+    height: auto;
+    overflow-y: auto;
+  }
+
+  .testimonial-card {
+    width: calc(100% - 40px); /* Make cards full-width for smaller screens */
+    margin-left: 0; /* Remove extra margin on small screens */
+    padding: 1rem; /* Adjust padding */
+  }
+
+  .testimonials-grid {
+    gap: 1rem; /* Adjust gap between cards */
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-container {
+    padding: 1rem; /* Reduce padding for extra small screens */
+    height: auto; /* Allow height to adjust */
+  }
+
+  .testimonial-card {
+    width: 100%; /* Full width cards for very small screens */
+    margin-left: 0; /* Center the card */
+    padding: 0.75rem; /* Reduce padding */
+  }
+
+  .testimonials-grid {
+    gap: 0.5rem; /* Smaller gap between cards */
+  }
+
+  .add-testimonial-btn {
+    width: 100%; /* Full width button for small screens */
+    padding: 0.75rem;
+  }
 }

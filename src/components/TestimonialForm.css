@@ -97,17 +97,47 @@
   box-shadow: 0 0 25px rgba(138, 43, 226, 0.8);
 }
 
+/* Media queries for smaller screens */
+
 @media (max-width: 768px) {
   .testimonial-form {
+    width: calc(100% - 40px); /* Adjust the form width for smaller screens */
     padding: 1.5rem;
+    margin: 1rem auto; /* Adjust the margins for smaller screens */
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.9rem; /* Reduce input text size for smaller screens */
   }
 
   .form-actions {
-    flex-direction: column;
+    flex-direction: column; /* Stack buttons vertically */
     gap: 1rem;
   }
 
   .form-actions button {
-    width: 100%;
+    width: 100%; /* Full-width buttons */
+    padding: 0.75rem 1rem; /* Adjust button padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-form {
+    width: 100%; /* Full width for very small screens */
+    padding: 1rem;
+  }
+
+  .testimonial-form h3 {
+    font-size: 1.5rem; /* Reduce header font size */
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.85rem; /* Adjust input font size further */
+  }
+
+  .form-actions button {
+    padding: 0.5rem 0.75rem; /* Adjust button padding further */
   }
 }

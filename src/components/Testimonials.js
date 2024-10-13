@@ -10,7 +10,6 @@ export default function Testimonials() {
     
     const initialTestimonials = [
       { id: 1, name: "Deep Das", company: "Tech Co", role: "Developer", comment: "Great product!", rating: 5 },
-      { id: 2, name: "Hitarth Shah", company: "Design Inc", role: "Designer", comment: "Very useful tool.", rating: 4 },
     ]
     setTestimonials(initialTestimonials)
   }, [])
@@ -26,7 +25,7 @@ export default function Testimonials() {
 
   return (
     <div className="testimonials-container">
-      <h2>Customer Testimonials</h2>
+      <h2>Visiter's Testimonials</h2>
       <div className="testimonials-grid">
         {testimonials.map((testimonial) => (
           <div key={testimonial.id} className="testimonial-card">
