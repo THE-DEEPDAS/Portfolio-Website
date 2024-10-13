@@ -79,7 +79,7 @@ a:hover {
 }
 
 .skill-item:hover {
-  background: #9b59b6;
+  background: #f2e63b;
   transform: translateY(-2px);
   box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
 }

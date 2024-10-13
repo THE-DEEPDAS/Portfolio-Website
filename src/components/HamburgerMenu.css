@@ -91,14 +91,14 @@ body {
 }
 
 .dropdown-menu nav ul li a:hover {
-    background-color: #ba31b4; 
+    background-color: #2312c4; 
     color: white;
     font-weight: bolder; 
     box-shadow: 0 0 10px rgba(138, 43, 226, 0.8); /* Glowing effect */
 }
 
 .dropdown-menu nav ul li a.hover-effect {
-    background-color: #ba31b4; /* Simulated hover background */
+    background-color: #2312c4; /* Simulated hover background */
     color: white;
     font-weight: bolder; 
     box-shadow: 0 0 10px rgba(138, 43, 226, 0.8); /* Glowing effect */

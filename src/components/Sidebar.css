@@ -92,7 +92,7 @@ nav ul li a:hover::before {
 }
 
 nav ul li a:hover {
-    background-color: #ba31b4; 
+    background-color: #2312c4 !important; 
     color: white;
     font-weight: bolder; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -100,7 +100,7 @@ nav ul li a:hover {
 }
 
 button {
-    background-color: #3c1f1f; 
+    background-color: #2312c4; 
     color: #ffffff; 
     padding: 10px 20px;
     border: none;
@@ -112,7 +112,7 @@ button {
 }
 
 button:hover {
-    background-color: #ba31b4; 
+    background-color: #5531ba; 
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(186, 49, 180, 0.4);
 }
