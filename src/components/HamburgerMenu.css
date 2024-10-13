@@ -34,7 +34,7 @@ body {
     left: 0;
     width: 250px;
     min-height: 100vh;
-    background-color: #153E75; 
+    background-color:  rgb(34, 31, 234) !important; 
     box-shadow: 2px 0 15px rgba(26, 26, 26, 0.3);
     z-index: 999;
     display: flex;
