@@ -83,7 +83,7 @@
     border-radius: 10px;
 }
 
-.prev-button, .next-button {
+/* .prev-button, .next-button {
     background: rgba(255, 255, 255, 0.3);
     border: none;
     padding: 10px 15px;
@@ -109,7 +109,38 @@
 .prev-button:hover, .next-button:hover {
     background-color: rgba(255, 255, 255, 0.5);
     color: #153E75;
+} */
+
+.prev-button, .next-button {
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    padding: 10px 15px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    height: 50px; /* Set fixed height */
+    line-height: 30px; /* Ensure the text stays vertically centered */
 }
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+.prev-button:hover, .next-button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #153E75;
+    transform: translateY(-50%); /* Ensure hover state keeps translateY the same */
+}
+
 
 .image-description {
     margin-top: 20px;
