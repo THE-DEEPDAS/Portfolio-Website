@@ -75,7 +75,13 @@ const Technical = () => {
                 require('./Assets/codeforces3.png'),
             ],
             title: 'CODEFORCES PROFILE',
-            description: '🏆 Profile showcasing my competitive programming achievements and problem-solving skills on Codeforces. Focused on algorithmic challenges and contests. 💡 Visit https://codeforces.com/profile/deepdblm for latest info',
+            description: (
+                <span>
+                    🏆 Profile showcasing my competitive programming achievements and problem-solving skills on Codeforces. 
+                    Focused on algorithmic challenges and contests. 💡 
+                    <a href="https://codeforces.com/profile/deepdblm" target="_blank" rel="noopener noreferrer">Visit LeetCode for latest info</a>
+                </span>
+            ),
         },
         {
             image: [
@@ -83,7 +89,13 @@ const Technical = () => {
                 require('./Assets/leetcode2.png'),
             ],
             title: 'LEETCODE PROFILE',
-            description: '💻 LeetCode profile highlighting my practice and progress in solving coding problems. Includes various difficulty levels and problem types. 📈 Visit https://leetcode.com/u/THE_DEEP_/ for latest info',
+            description: (
+                <span>
+                    💻 LeetCode profile highlighting my practice and progress in solving coding problems. 
+                    Includes various difficulty levels and problem types. 📈 
+                    <a href="https://leetcode.com/u/THE_DEEP_/" target="_blank" rel="noopener noreferrer">Visit LeetCode for latest info</a>
+                </span>
+            ),
         },
         {
             image: [
