@@ -112,7 +112,7 @@ const Technical = () => {
             description: '🌞 Took part in the ACM Summer Challenge, where I tackled complex algorithmic problems and improved my coding skills. 🏆',
         },
         {
-            image: 'https://via.placeholder.com/600',
+            image: require('./Assets/Web Wonders finalists.jpg'),
             title: 'WEB WONDERS FINALISTS',
             description: '🌟 Recognized as a finalist in the Web Wonders competition for creating a standout web application with cutting-edge design and functionality. 🏅',
         },
