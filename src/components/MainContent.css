@@ -1,7 +1,7 @@
 .main-content {
   flex-grow: 1;
   background-color: #000000;
-  margin-left: 270px;
+  margin-left: 270px; /* Remove left margin for mobile */
   padding: 40px 20px;
   color: #e6e6e6;
   display: flex;
@@ -164,7 +164,7 @@
 
 @media (max-width: 768px) {
   .main-content {
-    margin-left: 0;
+    margin-left: 0; /* Ensure no left margin on smaller screens */
     padding: 20px;
     max-height: 100vh;
     overflow-y: auto;
@@ -188,10 +188,9 @@
 
 @media (max-width: 480px) {
   .main-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    margin-left: 0; /* Ensure no left margin on very small screens */
     padding: 15px;
+    width: 100vw;
     justify-content: flex-start;
     box-sizing: border-box;
   }
