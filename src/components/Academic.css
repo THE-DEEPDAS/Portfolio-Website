@@ -23,6 +23,7 @@
 }
 
 h1 {
+    margin-top: 60px; /* Add top margin to create space for hamburger */
     margin-bottom: 20px;
     font-size: 2rem;
     font-weight: bold;

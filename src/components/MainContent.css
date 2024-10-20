@@ -170,6 +170,7 @@
     overflow-y: auto;
     justify-content: flex-start;
     box-sizing: border-box;
+    margin-top: 60px; /* Add top margin for small screens */
   }
 
   .main-content h1 {
