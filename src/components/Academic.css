@@ -10,15 +10,22 @@ html, body {
     overflow-y: auto;
     padding: 20px;
     background: black;
-    margin-left: 270px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     box-sizing: border-box;
-    width: calc(100% - 270px);
-    overflow-x: hidden;
+    width: 100%; /* Changed to 100% for flexbox layout */
     color: #ffffff;
+    margin: 0 auto; /* Centering the content */
+}
+
+/* Added a media query for larger devices */
+@media screen and (min-width: 769px) {
+    .academic-page {
+        margin-left: 270px; /* Margin for larger devices */
+        width: calc(100% - 270px); /* Adjust width accordingly */
+    }
 }
 
 .academic-gallery {
@@ -46,8 +53,6 @@ p {
 
 @media screen and (max-width: 768px) {
     .academic-page {
-        margin-left: 0;
-        width: 100%;
         padding: 15px;
     }
 
@@ -62,9 +67,7 @@ p {
 
 @media screen and (max-width: 480px) {
     .academic-page {
-        margin-left: 0;
         padding: 10px;
-        width: 100%;
     }
 
     h1 {
