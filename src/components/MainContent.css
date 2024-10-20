@@ -1,8 +1,13 @@
+html, body {
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+}
+
 .main-content {
   flex-grow: 1;
   background-color: #000000;
   margin-left: 270px; /* Maintain 270px margin for larger screens */
-  padding: 0; /* Remove padding if causing space */
+  padding: 0; /* Remove padding */
   color: #e6e6e6;
   display: flex;
   flex-direction: column;
@@ -16,7 +21,8 @@
 
 .main-content h1 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-top: 0; /* Remove top margin */
+  margin-bottom: 20px; /* Keep bottom margin */
   text-align: center;
   color: #e6e6e6;
   text-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
@@ -28,15 +34,6 @@
   text-align: center;
   margin-bottom: 40px;
   color: #9b59b6;
-}
-
-.main-content h5 {
-  font-size: 1.125rem;
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 40px;
-  color: #8e44ad;
-  margin-left: 50px;
 }
 
 .cards {
@@ -165,17 +162,17 @@
 @media (max-width: 768px) {
   .main-content {
     margin-left: 0; /* Remove left margin on smaller screens */
-    padding: 0; /* Remove padding if causing space */
+    padding: 0; /* Remove padding */
     max-height: 100vh;
     overflow-y: auto;
     justify-content: flex-start;
     box-sizing: border-box;
-    margin-top: 60px; /* Add top margin for small screens */
+    margin-top: 0; /* Remove top margin */
   }
 
   .main-content h1 {
     font-size: 2rem;
-    margin: 20px 0;
+    margin: 20px 0; /* Keep bottom margin */
   }
 
   .main-content p {
@@ -190,7 +187,7 @@
 @media (max-width: 480px) {
   .main-content {
     margin-left: 0; /* Remove left margin on very small screens */
-    padding: 0; /* Remove padding if causing space */
+    padding: 0; /* Remove padding */
     justify-content: flex-start;
     box-sizing: border-box;
   }
@@ -199,10 +196,8 @@
     font-size: 1.8rem;
   }
 
-  .main-content p,
-  .main-content h5 {
+  .main-content p {
     font-size: 0.9rem;
-    margin-left: 0;
   }
 }
 
