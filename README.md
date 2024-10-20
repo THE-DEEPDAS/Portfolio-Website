@@ -1,4 +1,4 @@
-#Deep Das - Personal Portfolio
+Deep Das - Personal Portfolio
 This repository contains the code for my personal portfolio website, which showcases my academic, technical, and co-curricular achievements. It is built using React.js with React Router for navigation between multiple pages, and CSS for styling. The website is fully responsive and provides an engaging user experience.
 
 🚀 Features
