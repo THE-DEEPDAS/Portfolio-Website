@@ -55,9 +55,7 @@ p {
 
 @media screen and (max-width: 480px) {
     .academic-page {
-        margin-left: 0; /* Ensure no left margin on very small screens */
         padding: 10px;
-        width: 100vw;
         overflow-x: hidden;
     }
 
