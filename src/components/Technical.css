@@ -78,6 +78,7 @@ p {
 @media screen and (max-width: 480px) {
     .technical-page {
         padding: 0; /* Remove padding */
+        margin-top: 60px; /* Add top margin for small screens */
     }
 
     .technical-page h1 {
