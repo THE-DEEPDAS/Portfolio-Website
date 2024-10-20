@@ -10,7 +10,7 @@ html, body {
     background: black; /* Dark background */
     margin-left: 270px !important; /* Maintain 270px margin for larger screens */
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack items vertically */
     align-items: center;
     text-align: center;
     box-sizing: border-box;
@@ -46,7 +46,6 @@ p {
 @media screen and (max-width: 768px) {
     .academic-page {
         margin-left: 0 !important; /* Remove left margin on smaller screens */
-        padding: 0 !important; /* Remove padding */
         margin-top: 60px !important; /* Add top margin for small screens */
     }
 
@@ -61,7 +60,6 @@ p {
 @media screen and (max-width: 480px) {
     .academic-page {
         margin-left: 0 !important; /* Remove left margin on very small screens */
-        padding: 0 !important; /* Remove padding */
         width: 100vw !important; /* Full width */
     }
 
