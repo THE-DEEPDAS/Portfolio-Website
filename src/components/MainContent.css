@@ -1,8 +1,8 @@
 .main-content {
   flex-grow: 1;
   background-color: #000000;
-  margin-left: 270px; /* Remove left margin for mobile */
-  padding: 40px 20px;
+  margin-left: 270px; /* Maintain 270px margin for larger screens */
+  padding: 0; /* Remove padding if causing space */
   color: #e6e6e6;
   display: flex;
   flex-direction: column;
@@ -164,8 +164,8 @@
 
 @media (max-width: 768px) {
   .main-content {
-    margin-left: 0; /* Ensure no left margin on smaller screens */
-    padding: 20px;
+    margin-left: 0; /* Remove left margin on smaller screens */
+    padding: 0; /* Remove padding if causing space */
     max-height: 100vh;
     overflow-y: auto;
     justify-content: flex-start;
@@ -188,9 +188,8 @@
 
 @media (max-width: 480px) {
   .main-content {
-    margin-left: 0; /* Ensure no left margin on very small screens */
-    padding: 15px;
-    width: 100vw;
+    margin-left: 0; /* Remove left margin on very small screens */
+    padding: 0; /* Remove padding if causing space */
     justify-content: flex-start;
     box-sizing: border-box;
   }
