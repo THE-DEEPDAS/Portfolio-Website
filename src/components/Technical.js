@@ -60,13 +60,9 @@ const Technical = () => {
             description: '🌱 Created a platform to support agricultural development by providing tools for crop management, soil analysis, and weather forecasting. Built using HTML CSS and JS. 🌾 wegrow.vercel.app',
         },
         {
-            image: [
-                require('./Assets/linefollower2.png'),
-                require('./Assets/linefollower.jpg'),
-                require('./Assets/linefollower1.jpg'),
-            ],
-            title: 'LINEFOLLOWER BOT',
-            description: '🤖 Built a line-following robot for automation and robotics competitions. Designed and programmed using Arduino and sensors for precise movement and task execution. 🛠️',
+            image: require('./Assets/Codex.png'),
+            title: 'CODEX',
+            description: '🏆 Ranked 5th in the Codex Contest 1, demonstrating a strong profile in competitive program',
         },
         {
             image: [
@@ -115,6 +111,15 @@ const Technical = () => {
             image: require('./Assets/Web Wonders finalists.jpg'),
             title: 'WEB WONDERS FINALISTS',
             description: '🌟 Recognized as a finalist in the Web Wonders competition for creating a standout web application with cutting-edge design and functionality. 🏅',
+        },
+        {
+            image: [
+                require('./Assets/linefollower2.png'),
+                require('./Assets/linefollower.jpg'),
+                require('./Assets/linefollower1.jpg'),
+            ],
+            title: 'LINEFOLLOWER BOT',
+            description: '🤖 Built a line-following robot for automation and robotics competitions. Designed and programmed using Arduino and sensors for precise movement and task execution. 🛠️',
         },
     ];
 
