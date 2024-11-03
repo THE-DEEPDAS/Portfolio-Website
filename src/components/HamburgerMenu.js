@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './HamburgerMenu.css';
 import Video from './Assets/Deep das.gif';
+import ResumePDF from './Assets/Resume.pdf'; 
 
 const HamburgerMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,15 +21,15 @@ const HamburgerMenu = () => {
                 setTimeout(() => {
                     links[index].classList.remove('hover-effect');
                     index++;
-                }, 1000); // Duration of hover effect
+                }, 1000);
             } else if (!isOpen) {
-                clearInterval(interval); // Stop if the menu is closed
-                index = 0; // Reset index when menu is closed
+                clearInterval(interval); 
+                index = 0; 
             }
-        }, 2000); // Change every 2 seconds
+        }, 2000); 
 
-        return () => clearInterval(interval); // Cleanup on unmount
-    }, [isOpen]); // Run effect when isOpen changes
+        return () => clearInterval(interval); 
+    }, [isOpen]); 
 
     return (
         <>
@@ -52,6 +53,9 @@ const HamburgerMenu = () => {
                         <li><Link to="/cocurricular" onClick={toggleMenu}>Co-Curriculars</Link></li>
                         <li><Link to="/contact" onClick={toggleMenu}>Contact</Link></li>
                         <li><Link to="/testimonials" onClick={toggleMenu}>Testimonials</Link></li>
+                        <li>
+                        <a href={ResumePDF} download>Download Resume</a> 
+                        </li>
                     </ul>
                 </nav>
             </div>

@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
 .sidebar {
     width: 250px;
     height: 100vh;

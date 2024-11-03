@@ -2,12 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';  
 import './Sidebar.css';
 import Video from './Assets/Deep das.gif';
+import ResumePDF from './Assets/Resume.pdf'; 
 
 const Sidebar = () => {
     return (
         <div className="sidebar">
             <div className="profile">
-            <img src={Video} alt="Profile" className="profile-pic" />
+                <img src={Video} alt="Profile" className="profile-pic" />
                 <h2>Deep Das</h2>
                 <p>Creative Developer</p>
             </div>
@@ -20,6 +21,9 @@ const Sidebar = () => {
                     <li><Link to="/cocurricular">Co-Curriculars</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
                     <li><Link to="/testimonials">Testimonials</Link></li>
+                    <li>
+                        <a href={ResumePDF} download>Download Resume</a> 
+                    </li>
                 </ul>
             </nav>
         </div>
