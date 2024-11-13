@@ -103,14 +103,19 @@ const Technical = () => {
             description: '🏅 Participated in HackOut, a hackathon organized by DAIICT. Collaborated with a team to develop an innovative solution to a real-world problem. 💡',
         },
         {
-            image: require('./Assets/acm_summer.png'),
-            title: 'ACM SUMMER CHALLENGE',
-            description: '🌞 Took part in the ACM Summer Challenge, where I tackled complex algorithmic problems and improved my coding skills. 🏆',
-        },
-        {
             image: require('./Assets/Web Wonders finalists.jpg'),
             title: 'WEB WONDERS FINALISTS',
             description: '🌟 Recognized as a finalist in the Web Wonders competition for creating a standout web application with cutting-edge design and functionality. 🏅',
+        },
+        {
+            image: require('./Assets/Gandhian_Idea_Competition.jpg'),
+            title: 'Ideathon Competition Finalists',
+            description: '🌟 We participated in the Gandhian Idea Competition held by auro university and cleared the round 1 and reached the final where we presented the project to the panel. 🏅',
+        },
+        {
+            image: require('./Assets/acm_summer.png'),
+            title: 'ACM SUMMER CHALLENGE',
+            description: '🌞 Took part in the ACM Summer Challenge, where I tackled complex algorithmic problems and improved my coding skills. 🏆',
         },
         {
             image: [
