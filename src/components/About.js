@@ -111,7 +111,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Portfolio Website
+              Resume PDF
             </a>
           </p>
           <p>

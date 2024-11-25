@@ -75,7 +75,7 @@ const Technical = () => {
                 <span>
                     🏆 Profile showcasing my competitive programming achievements and problem-solving skills on Codeforces. 
                     Focused on algorithmic challenges and contests. 💡 
-                    <a href="https://codeforces.com/profile/deepdblm" target="_blank" rel="noopener noreferrer">Visit LeetCode for latest info</a>
+                    <a href="https://codeforces.com/profile/The_DeepDas" target="_blank" rel="noopener noreferrer">Visit Codeforces for latest info</a>
                 </span>
             ),
         },
