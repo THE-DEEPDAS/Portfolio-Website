@@ -23,6 +23,17 @@ const Technical = () => {
     const projects = [
         {
             image: [
+                require('./Assets/Avishkaar1.png'),
+                require('./Assets/Avishkaar2.png'),
+                require('./Assets/Avishkaar3.png'),
+                require('./Assets/Avishkaar4.jpg'),
+                require('./Assets/Avishkaar5.jpg'),
+            ],
+            title: 'GeeksForGeeks Hackathon',
+            description: 'Excited to share that we secured 3rd runners up position in a national level GeeksForGeeks powered Avishkaar hackathon in season 2 at AITAM.',
+        },
+        {
+            image: [
                 require('./Assets/portfolio1.png'),
                 require('./Assets/portfolio2.png'),
                 require('./Assets/portfolio3.png'),
