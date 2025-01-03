@@ -15,7 +15,7 @@ const Academic = () => {
             description: '📊 Semester 2 Results: CGPA 9.42, SGPA 9.52. Keeping up the momentum! 📈',
         },
         {
-            image: require('./Assets/sem3_result.jpg'),
+            image: require('./Assets/sem3_result.png'),
             title: 'SEMESTER 3 RESULT',
             description: '📊 Semester 2 Results: CGPA 9.54, SGPA 9.80. Securing 1st position in the department! 📈',
         },
