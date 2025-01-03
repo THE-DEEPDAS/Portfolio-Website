@@ -15,6 +15,11 @@ const Academic = () => {
             description: '📊 Semester 2 Results: CGPA 9.42, SGPA 9.52. Keeping up the momentum! 📈',
         },
         {
+            image: require('./Assets/sem3_result.jpg'),
+            title: 'SEMESTER 3 RESULT',
+            description: '📊 Semester 2 Results: CGPA 9.54, SGPA 9.80. Securing 1st position in the department! 📈',
+        },
+        {
             image: require('./Assets/NSEP.png'),
             title: 'NSEP CENTER TOPPER',
             description: '🏅 Proud to be the Center Topper in NSEP Olympiad by IAPT! Ranked 1st in my center! 🥇',
