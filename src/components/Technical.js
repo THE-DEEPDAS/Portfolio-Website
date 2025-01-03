@@ -108,6 +108,15 @@ const Technical = () => {
             description: '🌟 Recognized as a finalist in the Web Wonders competition for creating a standout web application with cutting-edge design and functionality. 🏅',
         },
         {
+            image: [
+                require('./Assets/Drone_Workshop1.jpg'),
+                require('./Assets/Drone_Workshop2.jpg'),
+                require('./Assets/Drone_Workshop3.jpg'),
+            ],
+            title: 'Drone Workshop',
+            description: '🏅 Attended a workshop by SAE India Southern Section at Vellamal College, Chennai. Got hands-on experience and made a drone from scratch. 💡',
+        },
+        {
             image: require('./Assets/Gandhian_Idea_Competition.jpg'),
             title: 'Ideathon Competition Finalists',
             description: '🌟 We participated in the Gandhian Idea Competition held by auro university and cleared the round 1 and reached the final where we presented the project to the panel. 🏅',
