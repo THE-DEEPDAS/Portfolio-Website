@@ -17,7 +17,7 @@ const Academic = () => {
         {
             image: require('./Assets/sem3_result.png'),
             title: 'SEMESTER 3 RESULT',
-            description: '📊 Semester 2 Results: CGPA 9.54, SGPA 9.80. Securing 1st position in the department! 📈',
+            description: '📊 Semester 3 Results: CGPA 9.54, SGPA 9.80. Securing 1st position in the department! 📈',
         },
         {
             image: require('./Assets/NSEP.png'),

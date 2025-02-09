@@ -146,6 +146,61 @@ const Technical = () => {
             title: 'LINEFOLLOWER BOT',
             description: '🤖 Built a line-following robot for automation and robotics competitions. Designed and programmed using Arduino and sensors for precise movement and task execution. 🛠️',
         },
+        {
+            image: [
+                require('./Assets/Website (2).png'),
+                require('./Assets/Website (3).png'),
+                require('./Assets/Website (4).png'),
+                require('./Assets/Website (5).png'),
+                require('./Assets/Website (6).png'),
+                require('./Assets/Website (7).png'),
+                require('./Assets/Website (8).png'),
+                require('./Assets/Website (9).png'),
+                require('./Assets/Website (10).png'),
+                require('./Assets/Website (11).png'),
+                require('./Assets/Website (12).png'),
+                require('./Assets/Website (13).png'),
+                require('./Assets/Website (14).png'),
+                require('./Assets/Website (15).png'),
+            ],
+            title: 'Eco Brew: AI powered Sustainability Platform',
+            description: (
+                <span>
+                    🌱 Developed an AI-powered platform to reduce paper cup waste and promote sustainability. 
+                    <a href="https://ecobrew.highintoxic.tech/" target="_blank" rel="noopener noreferrer">Website</a> | 
+                    <a href="https://github.com/THE-DEEPDAS/Eco-Brew" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </span>
+            ),
+        },
+        {
+            image: [
+                require('./Assets/pulse360 (1).png'),
+                require('./Assets/pulse360 (2).png'),
+                require('./Assets/pulse360 (3).png'),
+            ],
+            title: 'Pulse360: Smart Healthcare Platform',
+            description: (
+                <span>
+                    💻 Created a real-time health recommendation dashboard, updating every 5 minutes based on Fitbit/smartwatch data. 
+                    <a href="https://pulse360.highintoxic.tech/" target="_blank" rel="noopener noreferrer">Website</a> | 
+                    <a href="https://github.com/THE-DEEPDAS/Pulse-360" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </span>
+            ),
+        },
+    ];
+
+    // Research work
+    const research = [
+        {
+            image: require('./Assets/scopus.png'),
+            title: 'Robust Audio Forgery Detection using Deep Learning',
+            description: (
+                <span>
+                    📄 Proposed a deep-learning pipeline for detecting audio forgeries, including deepfake and copy-move forgery. 
+                    <a href="https://example.com/research-paper" target="_blank" rel="noopener noreferrer">Read Paper</a>
+                </span>
+            ),
+        },
     ];
 
     return (
@@ -180,6 +235,21 @@ const Technical = () => {
                             image={Array.isArray(project.image) ? project.image : [project.image]}
                             title={project.title}
                             description={project.description}
+                        />
+                    ))}
+                </div>
+            </section>
+
+            {/* Research Section */}
+            <section className="research-section">
+                <h2>Research Work</h2>
+                <div className="technical-gallery">
+                    {research.map((paper, index) => (
+                        <ImageCard
+                            key={index}
+                            image={Array.isArray(paper.image) ? paper.image : [paper.image]}
+                            title={paper.title}
+                            description={paper.description}
                         />
                     ))}
                 </div>
