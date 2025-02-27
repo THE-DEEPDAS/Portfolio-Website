@@ -1,0 +1,86 @@
+.about-wrapper,
+.testimonials-wrapper {
+    position: relative;
+    min-height: 100vh;
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    overflow-y: auto;
+    padding: 2rem;
+}
+
+.about-page,
+.contact-page,
+.testimonials-container {
+    position: relative;
+    z-index: 1;
+    background: rgba(10, 25, 47, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Improve text readability over the animated background */
+h1, h2, p, label, input, textarea {
+    color: #e6f1ff;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Form specific styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+input, textarea {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e6f1ff;
+    padding: 0.8rem;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+textarea {
+    font-family: inherit;
+}
+
+button[type="submit"] {
+    width: 100%;
+    margin-top: 1rem;
+    background: rgba(100, 255, 218, 0.1);
+    border: 1px solid #64ffda;
+    color: #64ffda;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Card styles for testimonials */
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Button styles */
+button {
+    background: rgba(100, 255, 218, 0.1);
+    border: 1px solid #64ffda;
+    color: #64ffda;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: rgba(100, 255, 218, 0.2);
+    transform: translateY(-2px);
+}

@@ -1,0 +1,58 @@
+.interactive-background {
+    position: fixed;
+    top: 0;
+    left: 250px;  /* Match sidebar width */
+    width: calc(100% - 250px);
+    height: 100%;
+    z-index: 0;
+    background: #0a192f;
+    overflow: hidden;
+}
+
+.floating-ball {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(3px);
+    transition: transform 0.2s ease-out;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.ball-1 {
+    width: 400px;
+    height: 400px;
+    top: 20%;
+    left: 30%;
+}
+
+.ball-2 {
+    width: 300px;
+    height: 300px;
+    top: 40%;
+    right: 20%;
+}
+
+.ball-3 {
+    width: 350px;
+    height: 350px;
+    bottom: 20%;
+    left: 40%;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, 
+                rgba(10, 25, 47, 0.1) 0%, 
+                rgba(10, 25, 47, 0.6) 100%);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-20px) scale(1.1); }
+    100% { transform: translateY(0px) scale(1); }
+}

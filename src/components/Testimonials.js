@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import TestimonialForm from './TestimonialForm';
-import './Testimonials.css';
+import React, { useState } from "react";
+import TestimonialForm from "./TestimonialForm";
+import "./Testimonials.css";
+import InteractiveBackground from "./shared/InteractiveBackground";
 
 export default function Testimonials() {
   const [testimonials, setTestimonials] = useState([
@@ -9,7 +10,8 @@ export default function Testimonials() {
       name: "Aryan Verma",
       company: "SVNIT",
       role: "Classmate",
-      comment: "Working with Deep on our second year project was a great experience. His skills in front-end development really took our project to the next level!",
+      comment:
+        "Working with Deep on our second year project was a great experience. His skills in front-end development really took our project to the next level!",
       rating: 5,
     },
     {
@@ -17,7 +19,8 @@ export default function Testimonials() {
       name: "Sneha Reddy",
       company: "VIT Vellore",
       role: "Internship Colleague",
-      comment: "Deep has an excellent grasp of algorithms and problem-solving. His logical thinking helped us crack multiple hackathon challenges.",
+      comment:
+        "Deep has an excellent grasp of algorithms and problem-solving. His logical thinking helped us crack multiple hackathon challenges.",
       rating: 4,
     },
     {
@@ -25,7 +28,8 @@ export default function Testimonials() {
       name: "Kartik Sharma",
       company: "SRM University",
       role: "Lab Partner",
-      comment: "Deep is an extremely dedicated coder. I’ve seen him dive deep into tough assignments and come up with solutions that none of us could think of.",
+      comment:
+        "Deep is an extremely dedicated coder. I’ve seen him dive deep into tough assignments and come up with solutions that none of us could think of.",
       rating: 5,
     },
     {
@@ -33,7 +37,8 @@ export default function Testimonials() {
       name: "Pooja Agarwal",
       company: "BITS Pilani",
       role: "Mentor",
-      comment: "I mentored Deep during a summer internship. His ability to pick up new technologies quickly and apply them in real-world scenarios is impressive.",
+      comment:
+        "I mentored Deep during a summer internship. His ability to pick up new technologies quickly and apply them in real-world scenarios is impressive.",
       rating: 5,
     },
     {
@@ -41,7 +46,8 @@ export default function Testimonials() {
       name: "Rajat Singh",
       company: "Amity University",
       role: "Project Teammate",
-      comment: "Deep has strong problem-solving skills and great attention to detail. He played a vital role in making our project a success during the inter-college tech fest.",
+      comment:
+        "Deep has strong problem-solving skills and great attention to detail. He played a vital role in making our project a success during the inter-college tech fest.",
       rating: 4,
     },
     {
@@ -49,7 +55,8 @@ export default function Testimonials() {
       name: "Ananya Iyer",
       company: "IIIT Hyderabad",
       role: "Open Source Contributor",
-      comment: "Deep contributed to several open-source projects where his clean coding style and enthusiasm made him stand out. He’s a great collaborator.",
+      comment:
+        "Deep contributed to several open-source projects where his clean coding style and enthusiasm made him stand out. He’s a great collaborator.",
       rating: 5,
     },
     {
@@ -57,7 +64,8 @@ export default function Testimonials() {
       name: "Rohan Gupta",
       company: "NIT Trichy",
       role: "Hackathon Teammate",
-      comment: "Deep’s passion for coding is truly inspiring. We worked together on a hackathon, and his ability to stay focused under pressure helped us win.",
+      comment:
+        "Deep’s passion for coding is truly inspiring. We worked together on a hackathon, and his ability to stay focused under pressure helped us win.",
       rating: 5,
     },
   ]);
@@ -79,38 +87,58 @@ export default function Testimonials() {
   };
 
   return (
-    <div className="testimonials-container">
-      <h2>Visitor's Testimonials</h2>
+    <div className="testimonials-wrapper">
+      <InteractiveBackground />
+      <div className="testimonials-container">
+        <h2>Visitor's Testimonials</h2>
 
-      {/* Show success message */}
-      {showMessage && (
-        <div className="success-message">
-          The testimonial has been received and will be added shortly!
-        </div>
-      )}
-
-      <div className="testimonials-grid">
-        {testimonials.map((testimonial) => (
-          <div key={testimonial.id} className="testimonial-card">
-            <div className="testimonial-header">
-              <h3>{testimonial.name}</h3>
-              <p>{testimonial.company} - {testimonial.role}</p>
-            </div>
-            <p className="testimonial-comment">{testimonial.comment}</p>
-            <div className="testimonial-rating">
-              {[...Array(5)].map((_, index) => (
-                <span key={index} className={index < testimonial.rating ? 'star filled' : 'star'}>★</span>
-              ))}
-            </div>
+        {/* Show success message */}
+        {showMessage && (
+          <div className="success-message">
+            The testimonial has been received and will be added shortly!
           </div>
-        ))}
-      </div>
+        )}
 
-      {showForm ? (
-        <TestimonialForm onSubmit={addTestimonial} onCancel={() => setShowForm(false)} />
-      ) : (
-        <button className="add-testimonial-btn" onClick={() => setShowForm(true)}>Add Your Testimonial</button>
-      )}
+        <div className="testimonials-grid">
+          {testimonials.map((testimonial) => (
+            <div key={testimonial.id} className="testimonial-card">
+              <div className="testimonial-header">
+                <h3>{testimonial.name}</h3>
+                <p>
+                  {testimonial.company} - {testimonial.role}
+                </p>
+              </div>
+              <p className="testimonial-comment">{testimonial.comment}</p>
+              <div className="testimonial-rating">
+                {[...Array(5)].map((_, index) => (
+                  <span
+                    key={index}
+                    className={
+                      index < testimonial.rating ? "star filled" : "star"
+                    }
+                  >
+                    ★
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {showForm ? (
+          <TestimonialForm
+            onSubmit={addTestimonial}
+            onCancel={() => setShowForm(false)}
+          />
+        ) : (
+          <button
+            className="add-testimonial-btn"
+            onClick={() => setShowForm(true)}
+          >
+            Add Your Testimonial
+          </button>
+        )}
+      </div>
     </div>
   );
 }

@@ -1,20 +1,12 @@
 import React from "react";
 import "./About.css";
 import myImage from "./Assets/my_img.jpg";
-import "./shared/BackgroundAnimation.css";
+import InteractiveBackground from "./shared/InteractiveBackground";
 
 const About = () => {
   return (
-    <>
-      <div className="page-background">
-        <div className="matrix-overlay"></div>
-        <div className="cyber-grid"></div>
-        <div className="neon-circles">
-          <div className="neon-circle"></div>
-          <div className="neon-circle"></div>
-          <div className="neon-circle"></div>
-        </div>
-      </div>
+    <div className="about-wrapper">
+      <InteractiveBackground />
       <div className="about-page">
         <div className="page-content">
           <h1>About Me</h1>
@@ -138,7 +130,7 @@ const About = () => {
           </section>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

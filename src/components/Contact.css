@@ -34,23 +34,37 @@ body {
 }
 
 /* Contact Page Styling */
+.contact-wrapper {
+  position: relative;
+  min-height: 100vh;
+  width: calc(100% - 250px);
+  margin-left: 250px;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
 .contact-page {
-  width: calc(100% - 270px);
-  margin-left: 270px;
-  margin-top: 0; /* Set to 0 to remove top margin */
-  padding: 2rem 20px; /* Adjust padding as needed */
-  background: black;
-  box-shadow: none;
-  animation: glow 3s infinite, fadeIn 1s ease-out;
-  /* overflow-y: auto; */
-  scroll-behavior: smooth;
-  min-height: 100vh; /* Full viewport height */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: center;
-  box-sizing: border-box;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(10, 25, 47, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+button[type="submit"] {
+  margin-bottom: 2rem;
 }
 
 /* Sidebar Styling - Complementary color
@@ -148,9 +162,13 @@ nav ul li a:hover {
 }
 
 @media screen and (max-width: 768px) {
+  .contact-wrapper {
+    width: 100%;
+    margin-left: 0;
+  }
+  
   .contact-page {
     padding: 1rem;
-    margin-top: 60px; /* Add top margin for small screens */
   }
 
   .contact-page h1 {
