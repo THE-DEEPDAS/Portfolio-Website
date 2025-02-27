@@ -1,7 +1,7 @@
 import React from "react";
 import ImageCard from "./ImageCard";
 import "./Technical.css";
-import './shared/BackgroundAnimation.css';
+import "./shared/BackgroundAnimation.css";
 
 const Technical = () => {
   // Experience data (grouped like projects)
@@ -315,7 +315,6 @@ const Technical = () => {
     },
   ];
 
-
   // Research work
   const research = [
     {
@@ -339,6 +338,15 @@ const Technical = () => {
 
   return (
     <div className="technical-page">
+      <div className="technical-background">
+        <div className="technical-matrix"></div>
+        <div className="technical-grid"></div>
+        <div className="neon-circles">
+          <div className="neon-circle"></div>
+          <div className="neon-circle"></div>
+          <div className="neon-circle"></div>
+        </div>
+      </div>
       <h1>Welcome to my technical portfolio</h1>
       <p>
         Explore a comprehensive overview of my technical skills, projects, and

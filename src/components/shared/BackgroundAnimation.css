@@ -13,7 +13,17 @@
   50% { opacity: 0.7; }
 }
 
-.page-background {
+.technical-page,
+.academic-page,
+.CoCurricular-page {
+  position: relative;
+  z-index: 1;
+}
+
+.technical-page::before,
+.academic-page::before,
+.CoCurricular-page::before {
+  content: '';
   position: fixed;
   top: 0;
   left: 0;
@@ -24,7 +34,21 @@
   background: linear-gradient(135deg, #000000, #1a1a1a);
 }
 
-.matrix-overlay {
+.technical-background,
+.academic-background,
+.CoCurricular-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.technical-matrix,
+.academic-matrix,
+.CoCurricular-matrix {
   position: absolute;
   top: 0;
   left: 0;
@@ -40,7 +64,9 @@
   animation: matrix-rain 20s linear infinite;
 }
 
-.cyber-grid {
+.technical-grid,
+.academic-grid,
+.CoCurricular-grid {
   position: absolute;
   top: -100%;
   left: -100%;
