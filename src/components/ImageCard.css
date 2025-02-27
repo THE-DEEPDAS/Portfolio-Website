@@ -1,13 +1,30 @@
+@keyframes floatAnimation {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(1deg); }
+  75% { transform: translateY(10px) rotate(-1deg); }
+}
+
+@keyframes glowingBorder {
+  0%, 100% { border-color: rgba(138, 43, 226, 0.8); }
+  50% { border-color: rgba(255, 255, 255, 0.8); }
+}
+
 .image-card {
     position: relative;
     width: 250px;
     margin: 10px;
     cursor: pointer;
     transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    animation: floatAnimation 6s ease-in-out infinite;
 }
 
 .image-card:hover {
-    transform: scale(1.1);
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 15px 30px rgba(138, 43, 226, 0.3);
+    animation: glowingBorder 2s infinite;
 }
 
 .image-card-img {
@@ -58,7 +75,9 @@
     width: 80%;
     max-width: 800px;
     padding: 20px;
-    background-color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     text-align: center;
@@ -83,37 +102,10 @@
     border-radius: 10px;
 }
 
-/* .prev-button, .next-button {
-    background: rgba(255, 255, 255, 0.3);
-    border: none;
-    padding: 10px 15px;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.5rem;
-    cursor: pointer;
-    border-radius: 5px;
-    margin: 0 10px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.prev-button {
-    left: 10px;
-}
-
-.next-button {
-    right: 10px;
-}
-
-.prev-button:hover, .next-button:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    color: #153E75;
-} */
-
 .prev-button, .next-button {
-    background: rgba(255, 255, 255, 0.3);
-    border: none;
+    background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.1);
     padding: 10px 15px;
     color: rgba(255, 255, 255, 0.7);
     font-size: 1.5rem;
@@ -140,7 +132,6 @@
     color: #153E75;
     transform: translateY(-50%); /* Ensure hover state keeps translateY the same */
 }
-
 
 .image-description {
     margin-top: 20px;

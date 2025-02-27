@@ -314,80 +314,6 @@ const Technical = () => {
     },
   ];
 
-  // New projects
-  const newProjects = [
-    {
-      image: [
-        require("./Assets/placeholder1.png"),
-        require("./Assets/placeholder2.png"),
-        require("./Assets/placeholder3.png"),
-      ],
-      title: "Gesture Controlled Suite",
-      description: (
-        <span>
-          🖐 Developed an AI-powered gesture recognition system enabling
-          intuitive control over digital interfaces.
-          <a
-            href="https://github.com/THE-DEEPDAS/Gesture-Controlled-Suite"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-        </span>
-      ),
-    },
-    {
-      image: [
-        require("./Assets/placeholder1.png"),
-        require("./Assets/placeholder2.png"),
-        require("./Assets/placeholder3.png"),
-      ],
-      title: "WanderBot",
-      description: (
-        <span>
-          🌍 Built an AI-powered travel assistant using Gemini Pro to generate
-          personalized travel itineraries.
-          <a
-            href="https://wanderbot.highintoxic.tech/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Website
-          </a>{" "}
-          |
-          <a
-            href="https://github.com/THE-DEEPDAS/WanderBot"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-        </span>
-      ),
-    },
-    {
-      image: [
-        require("./Assets/placeholder1.png"),
-        require("./Assets/placeholder2.png"),
-        require("./Assets/placeholder3.png"),
-      ],
-      title: "Task Manager Application",
-      description: (
-        <span>
-          📋 Developed a React Native task manager enabling users to create,
-          update, delete, and organize tasks.
-          <a
-            href="https://github.com/THE-DEEPDAS/Task-Manager-Application"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-        </span>
-      ),
-    },
-  ];
 
   // Research work
   const research = [
@@ -440,23 +366,6 @@ const Technical = () => {
         <h2>Projects</h2>
         <div className="technical-gallery">
           {projects.map((project, index) => (
-            <ImageCard
-              key={index}
-              image={
-                Array.isArray(project.image) ? project.image : [project.image]
-              }
-              title={project.title}
-              description={project.description}
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* New Projects Section */}
-      <section className="new-projects-section">
-        <h2>New Projects</h2>
-        <div className="technical-gallery">
-          {newProjects.map((project, index) => (
             <ImageCard
               key={index}
               image={

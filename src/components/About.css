@@ -1,6 +1,6 @@
 .about-page {
   position: relative;
-  background-color: #000000;
+  background: linear-gradient(135deg, #000000, #1a1a1a);
   padding: 20px;
   margin-left: 270px;
   overflow-y: auto;
@@ -8,17 +8,25 @@
   box-sizing: border-box;
   color: #ffffff;
   width: calc(100% - 250px);
+  perspective: 1000px;
 }
 
 .page-content {
   position: relative;
   max-width: 90%;
   margin: 20px auto;
-  background: black;
+  background: rgba(255, 255, 255, 0.05);
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 0 30px rgba(138, 43, 226, 0.3);
   animation: glow 3s infinite, fadeIn 1s ease-out;
+  backdrop-filter: blur(10px);
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.page-content:hover {
+  transform: translateZ(20px);
 }
 
 h1,
@@ -68,7 +76,7 @@ a:hover {
 .skill-item {
   flex: 1 1 calc(50% - 10px);
   font-size: 1.2rem;
-  background: #8e44ad;
+  background: linear-gradient(145deg, rgba(142, 68, 173, 0.2), rgba(142, 68, 173, 0.1));
   margin: 5px 0;
   padding: 10px;
   border-radius: 8px;
@@ -76,12 +84,14 @@ a:hover {
   box-sizing: border-box;
   color: #fff;
   text-align: center;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .skill-item:hover {
-  background: #f2e63b;
-  transform: translateY(-2px);
-  box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+  background: linear-gradient(145deg, rgba(142, 68, 173, 0.3), rgba(142, 68, 173, 0.2));
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
 }
 
 .image-container {
