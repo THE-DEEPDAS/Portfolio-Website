@@ -2,64 +2,72 @@ import React, { useEffect, useRef, useState } from "react";
 import "./InteractiveBackground.css";
 
 const InteractiveBackground = () => {
-  const backgroundRef = useRef(null);
-  const [mouseSpeed, setMouseSpeed] = useState(0);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const lastMousePos = useRef({ x: 0, y: 0 });
-  const lastMouseTime = useRef(Date.now());
+  const requestRef = useRef();
+  const [balls, setBalls] = useState(
+    [...Array(30)].map(() => ({
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      speedX: (Math.random() - 0.5) * 1,
+      speedY: (Math.random() - 0.5) * 1,
+      size: Math.random() * 30 + 10,
+      hue: Math.random() * 360,
+    }))
+  );
+
+  const animate = () => {
+    setBalls((prevBalls) =>
+      prevBalls.map((ball) => {
+        // Update position
+        let newX = ball.x + ball.speedX;
+        let newY = ball.y + ball.speedY;
+
+        // Bounce off edges
+        if (newX <= 0 || newX >= 100) {
+          ball.speedX *= -1;
+          newX = Math.max(0, Math.min(100, newX));
+        }
+        if (newY <= 0 || newY >= 100) {
+          ball.speedY *= -1;
+          newY = Math.max(0, Math.min(100, newY));
+        }
+
+        return {
+          ...ball,
+          x: newX,
+          y: newY,
+          hue: (ball.hue + 0.1) % 360,
+        };
+      })
+    );
+
+    requestRef.current = requestAnimationFrame(animate);
+  };
 
   useEffect(() => {
-    const background = backgroundRef.current;
-
-    const calculateMouseSpeed = (e) => {
-      const currentTime = Date.now();
-      const deltaTime = currentTime - lastMouseTime.current;
-
-      const deltaX = e.clientX - lastMousePos.current.x;
-      const deltaY = e.clientY - lastMousePos.current.y;
-
-      const speed = Math.sqrt(deltaX * deltaX + deltaY * deltaY) / deltaTime;
-
-      lastMousePos.current = { x: e.clientX, y: e.clientY };
-      lastMouseTime.current = currentTime;
-
-      return Math.min(speed * 100, 50); // Cap the maximum speed
-    };
-
-    const handleMouseMove = (e) => {
-      const speed = calculateMouseSpeed(e);
-      setMouseSpeed(speed);
-      setMousePos({ x: e.clientX, y: e.clientY });
-    };
-
-    document.addEventListener("mousemove", handleMouseMove);
-    return () => document.removeEventListener("mousemove", handleMouseMove);
+    requestRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(requestRef.current);
   }, []);
 
   return (
-    <div className="interactive-background" ref={backgroundRef}>
-      {[...Array(15)].map((_, index) => (
+    <div className="interactive-background">
+      {balls.map((ball, index) => (
         <div
           key={index}
-          className={`floating-ball ball-${index + 1}`}
+          className="floating-ball"
           style={{
-            width: `${Math.random() * 60 + 20}px`,
-            height: `${Math.random() * 60 + 20}px`,
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            transform: `translate(${
-              mousePos.x * (0.02 + Math.random() * 0.08)
-            }px, ${mousePos.y * (0.02 + Math.random() * 0.08)}px) scale(${
-              1 + mouseSpeed * 0.01
-            })`,
+            width: `${ball.size}px`,
+            height: `${ball.size}px`,
+            top: `${ball.y}%`,
+            left: `${ball.x}%`,
             background: `radial-gradient(circle at center, 
-              hsl(${Math.random() * 360}, 80%, 70%), 
-              hsl(${Math.random() * 360}, 80%, 50%))`,
-            opacity: 0.8,
+              hsl(${ball.hue}, 80%, 70%), 
+              hsl(${ball.hue}, 80%, 50%))`,
+            opacity: 0.6,
+            transform: `translate(-50%, -50%)`,
           }}
         />
       ))}
-      <div className="gradient-overlay"></div>
+      <div className="gradient-overlay" />
     </div>
   );
 };
