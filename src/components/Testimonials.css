@@ -1,7 +1,7 @@
 @keyframes glow {
-  0% { box-shadow: 0 0 5px rgba(138, 43, 226, 0.5); }
-  50% { box-shadow: 0 0 20px rgba(138, 43, 226, 0.8); }
-  100% { box-shadow: 0 0 5px rgba(138, 43, 226, 0.5); }
+  0% { box-shadow: 0 0 10px rgba(138, 43, 226, 0.5); }
+  50% { box-shadow: 0 0 30px rgba(138, 43, 226, 0.8); }
+  100% { box-shadow: 0 0 10px rgba(138, 43, 226, 0.5); }
 }
 
 @keyframes fadeIn {
@@ -20,7 +20,7 @@ body {
   width: calc(100% - 270px);
   margin-left: 270px;
   padding: 2rem;
-  background: black;
+  background: linear-gradient(145deg, #000000, #1a1a1a);
   border-radius: 15px;
   box-shadow: 0 0 30px rgba(138, 43, 226, 0.3);
   animation: glow 3s infinite, fadeIn 1s ease-out;
@@ -46,7 +46,7 @@ body {
 }
 
 .testimonial-card {
-  background-color: #1a1a1a;
+  background: linear-gradient(145deg, #1a1a1a, #333333);
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
@@ -99,7 +99,7 @@ body {
   display: block;
   width: 100%;
   padding: 1rem;
-  background-color: #8e44ad;
+  background: linear-gradient(145deg, #8e44ad, #9b59b6);
   color: white;
   border: none;
   border-radius: 8px;
@@ -110,7 +110,7 @@ body {
 }
 
 .add-testimonial-btn:hover {
-  background-color: #9b59b6;
+  background: linear-gradient(145deg, #9b59b6, #8e44ad);
   transform: translateY(-2px);
   box-shadow: 0 0 25px rgba(138, 43, 226, 0.8);
 }

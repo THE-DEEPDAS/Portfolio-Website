@@ -1,6 +1,6 @@
 .main-content {
   flex-grow: 1;
-  background-color: #000000;
+  background: linear-gradient(145deg, #000000, #1a1a1a);
   margin-left: 270px;
   width: calc(100% - 270px);
   padding: 40px 20px;
@@ -48,7 +48,7 @@
 }
 
 .card {
-  background-color: #1a1a1a;
+  background: linear-gradient(145deg, #1a1a1a, #333333);
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);

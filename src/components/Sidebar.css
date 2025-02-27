@@ -5,9 +5,9 @@
 .sidebar {
     width: 250px;
     height: 100vh;
-    background-color: rgb(34, 31, 234) !important; /* Match hamburger menu background */
+    background: linear-gradient(145deg, rgb(34, 31, 234), #2312c4);
     padding: 20px;
-    color: #e0e0e0; 
+    color: #e0e0e0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +30,7 @@
     width: 80px;
     height: 80px;
     margin-bottom: 15px;
-    border: 3px solid #543e3e; 
+    border: 3px solid #543e3e;
     transition: all 0.3s ease;
 }
 
@@ -41,13 +41,13 @@
 
 h2 {
     font-size: 20px;
-    color: #ffffff; /* White text */
+    color: #ffffff;
     margin: 10px 0;
-    text-shadow: 0 0 10px rgba(138, 43, 226, 0.8); /* Glowing effect */
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
 }
 
 p {
-    color: #ffffff !important; /* White text */
+    color: #ffffff !important;
     font-size: 14px;
 }
 
@@ -96,16 +96,16 @@ nav ul li a:hover::before {
 }
 
 nav ul li a:hover {
-    background-color: #2312c4 !important; 
+    background-color: #2312c4 !important;
     color: white;
-    font-weight: bolder; 
+    font-weight: bolder;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     transform: translateX(5px);
 }
 
 button {
-    background-color: #2312c4; 
-    color: #ffffff; 
+    background-color: #2312c4;
+    color: #ffffff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -116,13 +116,13 @@ button {
 }
 
 button:hover {
-    background-color: #5531ba; 
+    background-color: #5531ba;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(186, 49, 180, 0.4);
 }
 
 .profile h2, .profile p {
-    color: white !important; /* White text */
+    color: white !important;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin: 0;
     text-align: center;
