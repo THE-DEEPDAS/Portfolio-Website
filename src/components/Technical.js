@@ -1,6 +1,7 @@
 import React from "react";
 import ImageCard from "./ImageCard";
 import "./Technical.css";
+import './shared/BackgroundAnimation.css';
 
 const Technical = () => {
   // Experience data (grouped like projects)

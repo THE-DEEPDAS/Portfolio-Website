@@ -65,6 +65,9 @@
   margin-bottom: 15px;
   border: 3px solid transparent;
   background: linear-gradient(45deg, #ff00ff, #00ffff) border-box;
+  mask: 
+    linear-gradient(#fff 0 0) padding-box, 
+    linear-gradient(#fff 0 0);
   -webkit-mask: 
     linear-gradient(#fff 0 0) padding-box, 
     linear-gradient(#fff 0 0);
