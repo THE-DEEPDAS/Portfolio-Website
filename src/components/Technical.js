@@ -37,6 +37,17 @@ const Technical = () => {
     },
     {
       image: [
+        require("./Assets/Drone (1).jpg"),
+        require("./Assets/Drone (2).jpg"),
+        require("./Assets/Drone (3).jpg"),
+        require("./Assets/Drone (4).jpg"),
+      ],
+      title: "ADDC 2025 AIR 2",
+      description:
+        "🏅 Won the 2nd prize overall and 2nd prize in safe design at SAEISS organised ADDC 2025 competition. 💡",
+    },
+    {
+      image: [
         require("./Assets/portfolio1.png"),
         require("./Assets/portfolio2.png"),
         require("./Assets/portfolio3.png"),
@@ -169,10 +180,11 @@ const Technical = () => {
         require("./Assets/linefollower.jpg"),
         require("./Assets/linefollower1.jpg"),
       ],
-      title: "LINEFOLLOWER BOT",
+      title: "Line Follower, Path Finder and Harbour Hustle(Boat)",
       description:
-        "🤖 Built a line-following robot for automation and robotics competitions. Designed and programmed using Arduino and sensors for precise movement and task execution. 🛠️",
+        "🤖 Built a line-following robot for automation and robotics competitions. Designed and programmed using Arduino and sensors for precise movement and task execution. Built an RC controlled boat. 🛠️",
     },
+
     {
       image: [
         require("./Assets/Website (2).png"),
@@ -244,9 +256,9 @@ const Technical = () => {
     },
     {
       image: [
-        require("./Assets/placeholder1.png"),
-        require("./Assets/placeholder2.png"),
-        require("./Assets/placeholder3.png"),
+        require("./Assets/Gestures (1).png"),
+        require("./Assets/Gestures (2).png"),
+        require("./Assets/Gestures (3).png"),
       ],
       title: "Gesture Controlled Suite",
       description: (
@@ -265,9 +277,12 @@ const Technical = () => {
     },
     {
       image: [
-        require("./Assets/placeholder1.png"),
-        require("./Assets/placeholder2.png"),
-        require("./Assets/placeholder3.png"),
+        require("./Assets/Wanderbot (1).png"),
+        require("./Assets/Wanderbot (2).png"),
+        require("./Assets/Wanderbot (3).png"),
+        require("./Assets/Wanderbot (4).png"),
+        require("./Assets/Wanderbot (5).png"),
+        require("./Assets/Wanderbot (6).png"),
       ],
       title: "WanderBot",
       description: (
@@ -275,7 +290,7 @@ const Technical = () => {
           🌍 Built an AI-powered travel assistant using Gemini Pro to generate
           personalized travel itineraries.
           <a
-            href="https://wanderbot.highintoxic.tech/"
+            href="https://wanderbot.streamlit.app/"
             target="_blank"
             rel="noopener noreferrer"
           >
