@@ -54,8 +54,17 @@ const About = () => {
           <section className="skills">
             <h2>Skills</h2>
             <ul>
+              <li className="skill-item">Artificial Intelligence</li>
+              <li className="skill-item">Machine Learning</li>
+              <li className="skill-item">Deep Learning</li>
+              <li className="skill-item">Natural Language Processing</li>
+              <li className="skill-item">Computer Vision</li>
+              <li className="skill-item">Large Language Models</li>
               <li className="skill-item">JavaScript</li>
+              <li className="skill-item">MongoDB</li>
+              <li className="skill-item">Express.js</li>
               <li className="skill-item">React</li>
+              <li className="skill-item">Node.js</li>
               <li className="skill-item">TypeScript</li>
               <li className="skill-item">Web Hosting</li>
               <li className="skill-item">GitHub</li>
@@ -71,7 +80,7 @@ const About = () => {
               <li className="skill-item">C++</li>
               <li className="skill-item">C</li>
               <li className="skill-item">Prompt Engineering</li>
-              <li className="skill-item">Drone Making</li>
+              <li className="skill-item">Drone Building and autonomy</li>
             </ul>
           </section>
 
