@@ -6,6 +6,19 @@ import "./shared/BackgroundAnimation.css";
 const Technical = () => {
   // Experience data (grouped like projects)
   const experiences = [
+    // Reverse chronological by resume dates
+    {
+      image: ["https://via.placeholder.com/300?text=L%26T+Tech+Services"],
+      title: "L&T Technology Services — AI Intern",
+      description:
+        "Automated interpretation of P&ID diagrams and developed relation extraction pipelines for engineering schematics using AI and computer vision.",
+    },
+    {
+      image: ["https://via.placeholder.com/300?text=SVNIT+Surat"],
+      title: "SVNIT Surat — Research Intern",
+      description:
+        "Conducted research under Dr. Rahul Dixit on multi-modal, audio, and explainable AI, contributing to five research papers.",
+    },
     {
       image: [
         require("./Assets/greatnotes1.png"),
@@ -15,9 +28,15 @@ const Technical = () => {
         require("./Assets/greatnotes5.png"),
         require("./Assets/greatnotes6.png"),
       ],
-      title: "GreatNotes",
+      title: "GreatNotes — Full Stack Developer",
       description:
-        "This was my first commercially deployed project, showcasing my skills in full-stack development and project management.",
+        "Designed, developed, and deployed a dynamic website from the ground up, ensuring robust functionality and scalability.",
+    },
+    {
+      image: ["https://via.placeholder.com/300?text=PhysicsWallah"],
+      title: "PhysicsWallah — Subject Matter Expert (Physics)",
+      description:
+        "Curated high-quality physics content and developed comprehensive academic resources for enhanced student learning.",
     },
   ];
 
@@ -334,13 +353,12 @@ const Technical = () => {
   const research = [
     {
       image: require("./Assets/scopus.png"),
-      title: "Robust Audio Forgery Detection using Deep Learning",
+      title: "Detecting Audio Forgery using Deep Learning Techniques",
       description: (
         <span>
-          📄 Proposed a deep-learning pipeline for detecting audio forgeries,
-          including deepfake and copy-move forgery.
+          Proposed a deep-learning pipeline for audio deepfake detection with multi-scale feature fusion and attention.{" "}
           <a
-            href="https://example.com/research-paper"
+            href="https://link.springer.com/article/10.1007/s11760-025-04521-w"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -348,6 +366,36 @@ const Technical = () => {
           </a>
         </span>
       ),
+    },
+    {
+      image: require("./Assets/scopus.png"),
+      title: "Kantika — RAG Pipeline for Dermatology",
+      description:
+        "Developed a dermatology-specific RAG pipeline combining IR-CoT, RAPTOR, and CRAG for clinical QA and reasoning.",
+    },
+    {
+      image: require("./Assets/scopus.png"),
+      title: "Explainable AI — A Unique and Innovative Method",
+      description:
+        "Proposed a novel framework improving interpretability of black-box models, outperforming SHAP and LIME.",
+    },
+    {
+      image: require("./Assets/scopus.png"),
+      title: "UniFaceForge — Unified Face Forgery Detection System",
+      description:
+        "Built a large-scale dataset (300k fake, 100k real) and unified model achieving state-of-the-art forgery detection.",
+    },
+    {
+      image: require("./Assets/scopus.png"),
+      title: "C-Mind — Cross-modal Inference for Misinformation Detection",
+      description:
+        "Developed a contrastive vision-language framework for fact-checking image-text pairs on social media.",
+    },
+    {
+      image: require("./Assets/scopus.png"),
+      title: "Voice Encoding and Codec Detection",
+      description:
+        "Proposed a supervised pipeline with PANNS CNN ensemble for classifying audio encoding formats.",
     },
   ];
 
