@@ -29,77 +29,81 @@ export default function TestimonialForm({ onCancel }) {
     };
 
     const handleSubmit = (e) => {
-      e.preventDefault();
-      
-      console.log('Submitting form:', formData); // Log form data
-  
-      // Post the new testimonial to the server
-      fetch('/api/testimonials', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-      })
-      .then((res) => res.json())
-      .then((data) => {
-          console.log('Response from server:', data); // Log server response
-          setLatestTestimonial(data); // Update the latest testimonial
-      })
-      .catch((error) => {
-          console.error('Error during submission:', error); // Log any errors
-      });
-  };
-  
+        e.preventDefault();
+
+        console.log('Submitting form:', formData); // Log form data
+
+        // Post the new testimonial to the server
+        fetch('/api/testimonials', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log('Response from server:', data); // Log server response
+                setLatestTestimonial(data); // Update the latest testimonial
+            })
+            .catch((error) => {
+                console.error('Error during submission:', error); // Log any errors
+            });
+    };
+
     return (
-        <div>
-            <form className="testimonial-form" onSubmit={handleSubmit}>
+        <div className="testimonial-form-overlay" onClick={onCancel}>
+            <form className="testimonial-form" onSubmit={handleSubmit} onClick={(e) => e.stopPropagation()}>
                 <h3>Add Your Testimonial</h3>
                 <div className="form-group">
-                    <label htmlFor="name">Name:</label>
+                    <label htmlFor="name">Full Name</label>
                     <input
                         type="text"
                         id="name"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
+                        placeholder="John Doe"
                         required
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="company">Company:</label>
+                    <label htmlFor="company">Company / Institution</label>
                     <input
                         type="text"
                         id="company"
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
+                        placeholder="Tech Corp"
                         required
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="role">Role:</label>
+                    <label htmlFor="role">Role / Relationship</label>
                     <input
                         type="text"
                         id="role"
                         name="role"
                         value={formData.role}
                         onChange={handleChange}
+                        placeholder="Project Partner"
                         required
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="comment">Comment:</label>
+                    <label htmlFor="comment">Testimonial</label>
                     <textarea
                         id="comment"
                         name="comment"
                         value={formData.comment}
                         onChange={handleChange}
+                        placeholder="Share your thoughts..."
                         required
                     ></textarea>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="rating">Rating:</label>
+                    <label htmlFor="rating">Rating (1-5)</label>
                     <input
                         type="number"
                         id="rating"
@@ -112,19 +116,14 @@ export default function TestimonialForm({ onCancel }) {
                     />
                 </div>
                 <div className="form-actions">
-                    <button type="submit">Submit</button>
-                    <button type="button" onClick={onCancel}>Cancel</button>
+                    <button type="submit" className="submit-btn">
+                        <i className="fas fa-paper-plane"></i> Submit
+                    </button>
+                    <button type="button" className="cancel-btn" onClick={onCancel}>
+                        Cancel
+                    </button>
                 </div>
             </form>
-
-            {latestTestimonial && (
-                <div>
-                    <h3>Latest Testimonial</h3>
-                    <p><strong>{latestTestimonial.name}</strong> - {latestTestimonial.company} ({latestTestimonial.role})</p>
-                    <p>{latestTestimonial.comment}</p>
-                    <p>Rating: {latestTestimonial.rating}</p>
-                </div>
-            )}
         </div>
     );
 }

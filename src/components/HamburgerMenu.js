@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './HamburgerMenu.css';
 import Video from './Assets/Deep das.gif';
-import ResumePDF from './Assets/Resume.pdf'; 
+import ResumePDF from './Assets/Resume.pdf';
 
 const HamburgerMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -10,26 +10,6 @@ const HamburgerMenu = () => {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
-
-    useEffect(() => {
-        const links = document.querySelectorAll('.dropdown-menu nav ul li a');
-        let index = 0;
-
-        const interval = setInterval(() => {
-            if (isOpen && index < links.length) {
-                links[index].classList.add('hover-effect');
-                setTimeout(() => {
-                    links[index].classList.remove('hover-effect');
-                    index++;
-                }, 1000);
-            } else if (!isOpen) {
-                clearInterval(interval); 
-                index = 0; 
-            }
-        }, 2000); 
-
-        return () => clearInterval(interval); 
-    }, [isOpen]); 
 
     return (
         <>
@@ -53,11 +33,9 @@ const HamburgerMenu = () => {
                         <li><Link to="/cocurricular" onClick={toggleMenu}>Co-Curriculars</Link></li>
                         <li><Link to="/contact" onClick={toggleMenu}>Contact</Link></li>
                         <li><Link to="/testimonials" onClick={toggleMenu}>Testimonials</Link></li>
-                        <li>
-                        <a href={ResumePDF} download>Download Resume</a> 
-                        </li>
                     </ul>
                 </nav>
+                <a href={ResumePDF} download className="resume-btn" style={{ marginTop: 'auto' }}>Download Resume</a>
             </div>
         </>
     );

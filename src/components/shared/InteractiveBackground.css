@@ -1,8 +1,8 @@
 .interactive-background {
     position: fixed;
     top: 0;
-    left: 250px;
-    width: calc(100% - 250px);
+    left: 280px;
+    width: calc(100% - 280px);
     height: 100%;
     z-index: 0;
     background: #0a192f;
@@ -14,7 +14,8 @@
     border-radius: 50%;
     filter: blur(3px);
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-    transition: none; /* Remove transition for smoother motion */
+    transition: none;
+    /* Remove transition for smoother motion */
 }
 
 .floating-ball.exploding {
@@ -50,23 +51,31 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, 
-                rgba(10, 25, 47, 0.2) 0%, 
-                rgba(10, 25, 47, 0.7) 100%);
+    background: radial-gradient(circle at center,
+            rgba(10, 25, 47, 0.2) 0%,
+            rgba(10, 25, 47, 0.7) 100%);
     pointer-events: none;
 }
 
 .gradient-overlay.exploding {
-    background: radial-gradient(circle at center, 
-                rgba(255, 255, 255, 0.3) 0%, 
-                rgba(10, 25, 47, 0.9) 100%);
+    background: radial-gradient(circle at center,
+            rgba(255, 255, 255, 0.3) 0%,
+            rgba(10, 25, 47, 0.9) 100%);
     transition: all 0.5s ease-out;
 }
 
 @keyframes float {
-    0% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-20px) scale(1.1); }
-    100% { transform: translateY(0px) scale(1); }
+    0% {
+        transform: translateY(0px) scale(1);
+    }
+
+    50% {
+        transform: translateY(-20px) scale(1.1);
+    }
+
+    100% {
+        transform: translateY(0px) scale(1);
+    }
 }
 
 @media (max-width: 768px) {

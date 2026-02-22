@@ -4,8 +4,7 @@ import HamburgerMenu from './HamburgerMenu';
 import { useMediaQuery } from 'react-responsive';
 
 const Navigation = () => {
-    
-    const isDesktop = useMediaQuery({ minWidth: 1024 }); 
+    const isDesktop = useMediaQuery({ minWidth: 1024 });
 
     return (
         <>

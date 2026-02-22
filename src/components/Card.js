@@ -1,39 +1,42 @@
-import React, { useEffect, useRef } from 'react';
-import './Card.css'; 
+import React from 'react';
+import { motion } from 'framer-motion';
+import Tilt from 'react-parallax-tilt';
+import './Card.css';
 
-const Card = ({ title, description, color, icon, onClick }) => {
-    const cardRef = useRef(null);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (!cardRef.current) return;
-
-            const rect = cardRef.current.getBoundingClientRect();
-            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-
-            if (isVisible) {
-                cardRef.current.style.animation = "cardScroll 0.5s ease-out forwards";
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        handleScroll(); // Trigger the animation on mount
-
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
+const Card = ({ title, description, icon, onClick }) => {
     return (
-        <div 
-            className={`card ${color}`} 
-            onClick={onClick}
-            ref={cardRef}
+        <Tilt
+            tiltMaxAngleX={15}
+            tiltMaxAngleY={15}
+            perspective={1200}
+            scale={1.05}
+            transitionSpeed={1500}
+            gyroscope={true}
+            className="tilt-wrapper"
         >
-            <div className="card-content">
-                <i className={`fas ${icon} icon`}></i> {/* Using FontAwesome icon */}
-                <h3>{title}</h3>
-                <p>{description}</p>
-            </div>
-        </div>
+            <motion.div
+                className="card"
+                initial={{ opacity: 0, scale: 0.8, filter: "blur(20px)" }}
+                whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{
+                    boxShadow: "0 0 40px rgba(179, 136, 255, 0.3)",
+                    borderColor: "rgba(179, 136, 255, 0.8)",
+                    y: -10
+                }}
+                viewport={{ once: true }}
+                onClick={onClick}
+            >
+                <div className="card-glow" />
+                <div className="card-icon">
+                    <i className={icon}></i>
+                </div>
+                <div className="card-content">
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                </div>
+            </motion.div>
+        </Tilt>
     );
 };
 

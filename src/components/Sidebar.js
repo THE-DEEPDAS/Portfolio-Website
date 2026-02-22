@@ -1,10 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';  
+import { Link } from 'react-router-dom';
+import Magnetic from './shared/Magnetic';
 import './Sidebar.css';
 import Video from './Assets/Deep das.gif';
-import ResumePDF from './Assets/Resume.pdf'; 
+import ResumePDF from './Assets/Resume.pdf';
 
 const Sidebar = () => {
+    const navItems = [
+        { name: "Home", path: "/" },
+        { name: "About", path: "/about" },
+        { name: "Academic", path: "/academic" },
+        { name: "Technical", path: "/technical" },
+        { name: "Co-Curriculars", path: "/cocurricular" },
+        { name: "Contact", path: "/contact" },
+        { name: "Testimonials", path: "/testimonials" },
+    ];
+
     return (
         <div className="sidebar">
             <div className="profile">
@@ -14,18 +25,18 @@ const Sidebar = () => {
             </div>
             <nav>
                 <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/academic">Academic</Link></li>
-                    <li><Link to="/technical">Technical</Link></li>
-                    <li><Link to="/cocurricular">Co-Curriculars</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
-                    <li><Link to="/testimonials">Testimonials</Link></li>
-                    <li>
-                        <a href={ResumePDF} download>Download Resume</a> 
-                    </li>
+                    {navItems.map((item) => (
+                        <li key={item.path}>
+                            <Magnetic strength={0.2}>
+                                <Link to={item.path}>{item.name}</Link>
+                            </Magnetic>
+                        </li>
+                    ))}
                 </ul>
             </nav>
+            <Magnetic strength={0.3}>
+                <a href={ResumePDF} download className="resume-btn">Download Resume</a>
+            </Magnetic>
         </div>
     );
 };

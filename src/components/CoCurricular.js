@@ -1,45 +1,42 @@
-import React from "react";
-import ImageCard from "./ImageCard";
+import React, { useState } from "react";
 import "./CoCurricular.css";
-import "./shared/BackgroundAnimation.css";
+import { motion } from "framer-motion";
+import ImageCard from "./ImageCard";
+import InteractiveBackground from "./shared/InteractiveBackground";
+import NeuralHandshake from "./shared/NeuralHandshake";
 
 const CoCurricular = () => {
+  const [isDecoded, setIsDecoded] = useState(false);
   const images = [
     {
       image: require("./Assets/tabla.jpg"),
       title: "Skilled Tabla Player",
-      description:
-        "🎶 Mastery in playing the tabla, showcasing rhythmic precision and cultural depth.",
+      description: "🎶 Mastery in playing the tabla, showcasing rhythmic precision and cultural depth.",
     },
     {
       image: require("./Assets/taekwondo.jpg"),
       title: "Trained in Taekwondo",
-      description:
-        "🥋 Completed rigorous Taekwondo training, demonstrating discipline and martial skill.",
+      description: "🥋 Completed rigorous Taekwondo training, demonstrating discipline and martial skill.",
     },
     {
       image: require("./Assets/karate_medals.jpg"),
-      title: "Won Medals at State Level",
-      description:
-        "🏅 Achieved top honors in state-level karate competitions, reflecting dedication and excellence.",
+      title: "State Level Karate Medals",
+      description: "🏅 Achieved top honors in state-level karate competitions, reflecting dedication and excellence.",
     },
     {
       image: require("./Assets/skating.jpg"),
-      title: "Competed in Skating Competitions",
-      description:
-        "⛸️ Participated in various skating competitions, showcasing agility and competitive spirit.",
+      title: "Skating Competitions",
+      description: "⛸️ Participated in various skating competitions, showcasing agility and competitive spirit.",
     },
     {
       image: require("./Assets/debate.jpg"),
-      title: "Winner of Various Debate Competitions",
-      description:
-        "🏆 Recognized for eloquence and argumentation skills in multiple debate contests.",
+      title: "Debate winner",
+      description: "🏆 Recognized for eloquence and argumentation skills in multiple debate contests.",
     },
     {
       image: require("./Assets/cricket.png"),
-      title: "Enthusiast in Cricket, Badminton, Tug of War, and More",
-      description:
-        "🏏 Actively involved in a range of sports, from cricket and badminton to tug of war, highlighting versatility and teamwork.",
+      title: "Multi-Sport Enthusiast",
+      description: "🏏 Actively involved in a range of sports, from cricket and badminton to tug of war.",
     },
     {
       image: [require("./Assets/chess1.png"), require("./Assets/chess2.png")],
@@ -48,57 +45,68 @@ const CoCurricular = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { opacity: 1, scale: 1 }
+  };
+
   return (
     <div className="CoCurricular-page">
-      <div className="CoCurricular-background">
-        <div className="CoCurricular-matrix"></div>
-        <div className="CoCurricular-grid"></div>
-        <div className="neon-circles">
-          <div className="neon-circle"></div>
-          <div className="neon-circle"></div>
-          <div className="neon-circle"></div>
-        </div>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          textAlign: "center",
-        }}
+      <InteractiveBackground type="academic" />
+
+      {!isDecoded && (
+        <NeuralHandshake
+          title="SECTOR: CO-CURRICULAR"
+          onComplete={() => setIsDecoded(true)}
+        />
+      )}
+
+      <motion.div
+        initial={{ opacity: 0, filter: "blur(20px)" }}
+        animate={isDecoded ? { opacity: 1, filter: "blur(0px)" } : { opacity: 0 }}
+        transition={{ duration: 1 }}
+        className="cocurricular-content"
       >
-        <h1
-          style={{
-            fontWeight: "bold",
-            fontSize: "2rem",
-            marginBottom: "20px",
-          }}
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          Co-Curricular Activities Portfolio
-        </h1>
-        <p>
-          Explore a selection of my co-curricular activities that illustrate my
-          engagement in diverse interests and pursuits outside the classroom.
-        </p>
-        <div
+          Life Beyond Academics
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
+          Exploring diverse interests through sports, arts, and competitive pursuits.
+        </motion.p>
+        <motion.div
           className="CoCurricular-gallery"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            gap: "20px",
-          }}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
           {images.map((img, index) => (
-            <ImageCard
-              key={index}
-              image={img.image}
-              title={img.title}
-              description={img.description}
-            />
+            <motion.div key={index} variants={itemVariants}>
+              <ImageCard
+                image={img.image}
+                title={img.title}
+                description={img.description}
+                defaultRevealed={true}
+              />
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

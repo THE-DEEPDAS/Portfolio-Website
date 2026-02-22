@@ -1,0 +1,69 @@
+.skill-orbit-container {
+    position: relative;
+    height: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+    overflow: visible;
+}
+
+.orbit-center {
+    width: 80px;
+    height: 80px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 2px solid var(--accent-primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--accent-primary);
+    box-shadow: 0 0 20px rgba(179, 136, 255, 0.4);
+    z-index: 2;
+}
+
+.orbiting-skill {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.orbiting-skill span {
+    padding: 8px 18px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    color: var(--text-main);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    pointer-events: auto;
+    transition: all 0.3s ease;
+}
+
+.orbiting-skill span:hover {
+    border-color: var(--accent-primary);
+    background: rgba(179, 136, 255, 0.1);
+    box-shadow: 0 0 20px var(--accent-primary);
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .skill-orbit-container {
+        height: 300px;
+    }
+
+    .orbiting-skill span {
+        font-size: 0.7rem;
+        padding: 5px 10px;
+        --radius: 100px !important;
+    }
+}

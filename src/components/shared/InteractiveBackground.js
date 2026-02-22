@@ -1,72 +1,125 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "./InteractiveBackground.css";
 
-const InteractiveBackground = () => {
-  const requestRef = useRef();
-  const [balls, setBalls] = useState(
-    [...Array(30)].map(() => ({
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      speedX: (Math.random() - 0.5) * 1,
-      speedY: (Math.random() - 0.5) * 1,
-      size: Math.random() * 30 + 10,
-      hue: Math.random() * 360,
-    }))
-  );
-
-  const animate = () => {
-    setBalls((prevBalls) =>
-      prevBalls.map((ball) => {
-        // Update position
-        let newX = ball.x + ball.speedX;
-        let newY = ball.y + ball.speedY;
-
-        // Bounce off edges
-        if (newX <= 0 || newX >= 100) {
-          ball.speedX *= -1;
-          newX = Math.max(0, Math.min(100, newX));
-        }
-        if (newY <= 0 || newY >= 100) {
-          ball.speedY *= -1;
-          newY = Math.max(0, Math.min(100, newY));
-        }
-
-        return {
-          ...ball,
-          x: newX,
-          y: newY,
-          hue: (ball.hue + 0.1) % 360,
-        };
-      })
-    );
-
-    requestRef.current = requestAnimationFrame(animate);
-  };
+const InteractiveBackground = ({ type = 'home' }) => {
+  const canvasRef = useRef(null);
+  let particles = [];
+  let animationFrameId;
 
   useEffect(() => {
-    requestRef.current = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(requestRef.current);
-  }, []);
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const mouse = { x: null, y: null, radius: 150 };
+
+    const handleMouseMove = (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = (Math.random() - 0.5) * 1.5;
+        this.speedY = (Math.random() - 0.5) * 1.5;
+        this.color = type === 'academic' ? 'rgba(0, 229, 255, 0.8)' : 'rgba(179, 136, 255, 0.8)';
+      }
+
+      update() {
+        if (type === 'academic') {
+          this.y += this.size * 2;
+          if (this.y > canvas.height) this.y = -10;
+        } else if (type === 'about') {
+          const time = Date.now() * 0.001;
+          this.speedX = Math.sin(time + this.y * 0.01) * 0.5;
+          this.x += this.speedX;
+          this.y += this.speedY;
+        } else {
+          this.x += this.speedX;
+          this.y += this.speedY;
+        }
+
+        if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+        if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+
+        // Mouse interaction
+        let dx = mouse.x - this.x;
+        let dy = mouse.y - this.y;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+        if (distance < mouse.radius) {
+          if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 10;
+          if (mouse.x > this.x && this.x > this.size * 10) this.x -= 10;
+          if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 10;
+          if (mouse.y > this.y && this.y > this.size * 10) this.y -= 10;
+        }
+      }
+
+      draw() {
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    const init = () => {
+      particles = [];
+      const count = type === 'technical' ? 80 : 120;
+      for (let i = 0; i < count; i++) {
+        particles.push(new Particle());
+      }
+    };
+
+    const connect = () => {
+      if (type === 'academic') return; // Matrix rain doesn't connect
+      let maxDistance = type === 'technical' ? 200 : 150;
+      for (let a = 0; a < particles.length; a++) {
+        for (let b = a; b < particles.length; b++) {
+          let dx = particles[a].x - particles[b].x;
+          let dy = particles[a].y - particles[b].y;
+          let distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < maxDistance) {
+            let opacity = 1 - (distance / maxDistance);
+            ctx.strokeStyle = type === 'about' ? `rgba(0, 229, 255, ${opacity * 0.15})` : `rgba(179, 136, 255, ${opacity * 0.2})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particles[a].x, particles[a].y);
+            ctx.lineTo(particles[b].x, particles[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+    };
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].draw();
+        particles[i].update();
+      }
+      connect();
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    init();
+    animate();
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [type]);
 
   return (
-    <div className="interactive-background">
-      {balls.map((ball, index) => (
-        <div
-          key={index}
-          className="floating-ball"
-          style={{
-            width: `${ball.size}px`,
-            height: `${ball.size}px`,
-            top: `${ball.y}%`,
-            left: `${ball.x}%`,
-            background: `radial-gradient(circle at center, 
-              hsl(${ball.hue}, 80%, 70%), 
-              hsl(${ball.hue}, 80%, 50%))`,
-            opacity: 0.6,
-            transform: `translate(-50%, -50%)`,
-          }}
-        />
-      ))}
+    <div className={`interactive-background biome-${type}`}>
+      <canvas ref={canvasRef} />
       <div className="gradient-overlay" />
     </div>
   );

@@ -1,0 +1,20 @@
+.spotlight-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.4);
+    /* Subtle dimming */
+    /* Handled via inline styles for the mask */
+    transition: opacity 0.5s ease;
+}
+
+/* We'll use a mix-blend-mode or mask for the reveal effect */
+.spotlight-mask {
+    background: radial-gradient(circle 400px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.7) 100%);
+}

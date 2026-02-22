@@ -1,116 +1,74 @@
-import React from "react";
-import ImageCard from "./ImageCard";
+import React, { useState } from "react";
 import "./Academic.css";
-import "./shared/BackgroundAnimation.css";
+import InteractiveBackground from "./shared/InteractiveBackground";
+import { motion } from 'framer-motion';
+import ImageCard from "./ImageCard";
+import NeuralHandshake from "./shared/NeuralHandshake";
 
 const Academic = () => {
-  const images = [
+  const [isDecoded, setIsDecoded] = useState(false);
+  const details = [
     {
-      image: require("./Assets/sem1_result.jpg"),
-      title: "SEMESTER 1 RESULT",
-      description:
-        "📊 Semester 1 Results: CGPA 9.30, SGPA 9.30. The hard work paid off! 🎓",
-    },
-    {
-      image: require("./Assets/sem2_result.jpg"),
-      title: "SEMESTER 2 RESULT",
-      description:
-        "📊 Semester 2 Results: CGPA 9.42, SGPA 9.52. Keeping up the momentum! 📈",
-    },
-    {
-      image: require("./Assets/sem3_result.png"),
-      title: "SEMESTER 3 RESULT",
-      description:
-        "📊 Semester 3 Results: CGPA 9.54, SGPA 9.80. Securing 1st position in the department! 📈",
-    },
-    {
-      image: require("./Assets/NSEP.png"),
-      title: "NSEP CENTER TOPPER",
-      description:
-        "🏅 Proud to be the Center Topper in NSEP Olympiad by IAPT! Ranked 1st in my center! 🥇",
-    },
-    {
-      image: require("./Assets/NSEC.png"),
-      title: "NSEC CENTER TOPPER",
-      description:
-        "🏅 Center Topper in NSEC Olympiad! Secured 1st place at my center, conducted by IAPT and ACT! 🌟",
-    },
-    {
-      image: require("./Assets/acad_medals.jpg"),
-      title: "OLYMPIAD MEDALS",
-      description:
-        "🏆 A collection of medals from various Olympiads, UCMAS, and inter-school competitions! 🥇🥈🥉",
-    },
-    {
-      image: require("./Assets/Technothlon.png"),
-      title: "TECHNOTHLON AIR 60",
-      description:
-        "🥈 Achieved All India Rank 60 in Technothlon, organized by IIT Guwahati. A proud moment! 🇮🇳",
-    },
-    {
-      image: require("./Assets/city topper.jpg"),
-      title: "TECHNOTHLON CITY TOPPER",
-      description:
-        "🏅 City Topper in Technothlon! Secured All India Rank 60 in a prestigious competition by IIT Guwahati. 📜",
+      image: require("./Assets/10_marksheet.jpg"),
+      title: "Secondary School (X)",
+      description: "🏫 Navrachana Higher Secondary School: Graduated with 87% (2018-2019).",
     },
     {
       image: require("./Assets/12_marksheet.jpg"),
-      title: "CLASS 12 RESULT",
-      description:
-        "🎓 Class 12 Results: Achieved a stellar 99.7 percentile. Hard work and dedication! 💪",
+      title: "Higher Secondary (XII)",
+      description: "🏫 Navrachana Higher Secondary School: Completed CBSE with 82.2% in PCM (2020-2021).",
     },
     {
-      image: require("./Assets/10_marksheet.jpg"),
-      title: "CLASS 10 RESULT",
-      description:
-        "🎓 Class 10 Results: Grade A1. Mass promotion but still a proud moment! 😊",
-    },
-    {
-      image: require("./Assets/zonal.png"),
-      title: "UCMAS ZONAL COMPETITION",
-      description:
-        "🏆 1st Runner-Up in the UCMAS Zonal Level Competition! A fantastic achievement in mental arithmetic! 🧠",
-    },
-    {
-      image: require("./Assets/state.png"),
-      title: "UCMAS STATE COMPETITION",
-      description:
-        "🏅 Received the Merit Award in the UCMAS State Level Competition. Proud to represent my state! 🌍",
-    },
-    {
-      image: require("./Assets/national.png"),
-      title: "UCMAS NATIONAL COMPETITION",
-      description:
-        "🏅 Merit Award winner at the UCMAS National Level Competition! A remarkable national achievement! 🇮🇳",
-    },
+      image: require("./Assets/sem3_result.png"),
+      title: "B.Tech in Artificial Intelligence",
+      description: "🎓 Sardar Vallabhbhai National Institute of Technology (SVNIT): Pursuing AI specialization (2023-Present).",
+    }
   ];
 
   return (
-    <div className="academic-page">
-      <div className="academic-background">
-        <div className="academic-matrix"></div>
-        <div className="academic-grid"></div>
-        <div className="neon-circles">
-          <div className="neon-circle"></div>
-          <div className="neon-circle"></div>
-          <div className="neon-circle"></div>
+    <div className="academic-wrapper">
+      <InteractiveBackground type="academic" />
+
+      {!isDecoded && (
+        <NeuralHandshake
+          title="SECTOR: ACADEMIC"
+          onComplete={() => setIsDecoded(true)}
+        />
+      )}
+
+      <motion.div
+        className="academic-page"
+        initial={{ opacity: 0, filter: "blur(20px)" }}
+        animate={isDecoded ? { opacity: 1, filter: "blur(0px)" } : { opacity: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <motion.header
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <h1>Academic Journey</h1>
+          <p>Educational milestones and certifications.</p>
+        </motion.header>
+
+        <div className="timeline-layout">
+          <div className="timeline-connector"></div>
+          <div className="academic-gallery">
+            {details.map((item, index) => (
+              <motion.div
+                key={index}
+                className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+              >
+                <div className="timeline-dot"></div>
+                <ImageCard {...item} defaultRevealed={true} />
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-      <h1>Welcome to my academic portfolio</h1>
-      <p>
-        This page is dedicated to my Academic Background so far, forgive my
-        photography skills 📸
-      </p>
-      <div className="academic-gallery">
-        {images.map((img, index) => (
-          <ImageCard
-            key={index}
-            image={img.image}
-            title={img.title}
-            description={img.description}
-          />
-        ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
