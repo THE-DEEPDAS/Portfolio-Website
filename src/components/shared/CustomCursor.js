@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { motion, useSpring } from 'framer-motion';
 import './CustomCursor.css';
 
@@ -7,12 +7,19 @@ const CustomCursor = () => {
     const cursorX = useSpring(0, { damping: 20, stiffness: 200 });
     const cursorY = useSpring(0, { damping: 20, stiffness: 200 });
 
+    const trail1X = useSpring(0, { damping: 15, stiffness: 100 });
+    const trail1Y = useSpring(0, { damping: 15, stiffness: 100 });
+    const trail2X = useSpring(0, { damping: 25, stiffness: 80 });
+    const trail2Y = useSpring(0, { damping: 25, stiffness: 80 });
+    const trail3X = useSpring(0, { damping: 35, stiffness: 60 });
+    const trail3Y = useSpring(0, { damping: 35, stiffness: 60 });
+
     // Trail dots
-    const trail = [
-        { x: useSpring(0, { damping: 15, stiffness: 100 }), y: useSpring(0, { damping: 15, stiffness: 100 }) },
-        { x: useSpring(0, { damping: 25, stiffness: 80 }), y: useSpring(0, { damping: 25, stiffness: 80 }) },
-        { x: useSpring(0, { damping: 35, stiffness: 60 }), y: useSpring(0, { damping: 35, stiffness: 60 }) },
-    ];
+    const trail = useMemo(() => [
+        { x: trail1X, y: trail1Y },
+        { x: trail2X, y: trail2Y },
+        { x: trail3X, y: trail3Y },
+    ], [trail1X, trail1Y, trail2X, trail2Y, trail3X, trail3Y]);
 
     useEffect(() => {
         const moveCursor = (e) => {
@@ -39,7 +46,7 @@ const CustomCursor = () => {
             window.removeEventListener('mousemove', moveCursor);
             window.removeEventListener('mouseover', handleHover);
         };
-    }, [cursorX, cursorY]);
+    }, [cursorX, cursorY, trail]);
 
     return (
         <>

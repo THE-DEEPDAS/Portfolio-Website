@@ -10,17 +10,9 @@ export default function TestimonialForm({ onCancel }) {
         rating: 5,
     });
 
-    const [latestTestimonial, setLatestTestimonial] = useState(null);
-
     useEffect(() => {
-        // Fetch the latest testimonial from the server when the component mounts
-        fetch('/api/testimonials')
-            .then((res) => res.json())
-            .then((data) => {
-                if (data.length > 0) {
-                    setLatestTestimonial(data[0]); // Get the latest testimonial
-                }
-            });
+        // Fetch testimonials if needed for other purposes, otherwise this can be empty or removed.
+        // For now, removing the unused fetch call that only set latestTestimonial.
     }, []);
 
     const handleChange = (e) => {
@@ -44,7 +36,6 @@ export default function TestimonialForm({ onCancel }) {
             .then((res) => res.json())
             .then((data) => {
                 console.log('Response from server:', data); // Log server response
-                setLatestTestimonial(data); // Update the latest testimonial
             })
             .catch((error) => {
                 console.error('Error during submission:', error); // Log any errors

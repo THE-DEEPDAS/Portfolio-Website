@@ -9,7 +9,6 @@ import { motion } from "framer-motion";
 import ScrambleText from "./shared/ScrambleText";
 import CustomCursor from "./shared/CustomCursor";
 
-import FloatingElements from "./shared/FloatingElements";
 
 const MainContent = () => {
   const navigate = useNavigate();
