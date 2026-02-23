@@ -3,8 +3,8 @@ import "./InteractiveBackground.css";
 
 const InteractiveBackground = ({ type = 'home' }) => {
   const canvasRef = useRef(null);
-  let particles = [];
-  let animationFrameId;
+  const particlesRef = useRef([]);
+  const animationFrameIdRef = useRef();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -69,20 +69,20 @@ const InteractiveBackground = ({ type = 'home' }) => {
     }
 
     const init = () => {
-      particles = [];
+      particlesRef.current = [];
       const count = type === 'technical' ? 80 : 120;
       for (let i = 0; i < count; i++) {
-        particles.push(new Particle());
+        particlesRef.current.push(new Particle());
       }
     };
 
     const connect = () => {
       if (type === 'academic') return; // Matrix rain doesn't connect
       let maxDistance = type === 'technical' ? 200 : 150;
-      for (let a = 0; a < particles.length; a++) {
-        for (let b = a; b < particles.length; b++) {
-          let dx = particles[a].x - particles[b].x;
-          let dy = particles[a].y - particles[b].y;
+      for (let a = 0; a < particlesRef.current.length; a++) {
+        for (let b = a; b < particlesRef.current.length; b++) {
+          let dx = particlesRef.current[a].x - particlesRef.current[b].x;
+          let dy = particlesRef.current[a].y - particlesRef.current[b].y;
           let distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < maxDistance) {
@@ -90,8 +90,8 @@ const InteractiveBackground = ({ type = 'home' }) => {
             ctx.strokeStyle = type === 'about' ? `rgba(0, 229, 255, ${opacity * 0.15})` : `rgba(179, 136, 255, ${opacity * 0.2})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
-            ctx.moveTo(particles[a].x, particles[a].y);
-            ctx.lineTo(particles[b].x, particles[b].y);
+            ctx.moveTo(particlesRef.current[a].x, particlesRef.current[a].y);
+            ctx.lineTo(particlesRef.current[b].x, particlesRef.current[b].y);
             ctx.stroke();
           }
         }
@@ -100,12 +100,12 @@ const InteractiveBackground = ({ type = 'home' }) => {
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let i = 0; i < particles.length; i++) {
-        particles[i].draw();
-        particles[i].update();
+      for (let i = 0; i < particlesRef.current.length; i++) {
+        particlesRef.current[i].draw();
+        particlesRef.current[i].update();
       }
       connect();
-      animationFrameId = requestAnimationFrame(animate);
+      animationFrameIdRef.current = requestAnimationFrame(animate);
     };
 
     init();
@@ -113,7 +113,7 @@ const InteractiveBackground = ({ type = 'home' }) => {
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      cancelAnimationFrame(animationFrameId);
+      cancelAnimationFrame(animationFrameIdRef.current);
     };
   }, [type]);
 
